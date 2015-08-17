@@ -1,21 +1,33 @@
 $(document).ready(function () {
 
-	$('.js-nav-link').on('mouseover', function() {
-		if (!$('.js-nav-submenu').is(':visible')) {
+	/* Субменю в хедере */
+
+	var slideAllow = true;
+	function tglMainSubmenu() {
+		if (slideAllow)	{
 			$('.js-nav-submenu').toggle('slide',  {direction: 'up'}, 300);
+			slideAllow = false;
 		}
-	});
+		setTimeout(function() {slideAllow = true}, 500);
+	}
+
+	$('.js-nav-link').hoverIntent(function() {
+		if (!$('.js-nav-submenu').is(':visible')) {
+			tglMainSubmenu();
+		}
+	}, function() {return true});
 
 	$('.js-nav-wrapper').on('mouseleave', function() {
 		if ($('.js-nav-submenu').is(':visible')) {
-			$('.js-nav-submenu').toggle('slide',  {direction: 'up'}, 300);
+			tglMainSubmenu();
 		}
 	});
 
 	$('.js-submenu-close').click(function(){
-		$('.js-nav-submenu').toggle('slide',  {direction: 'up'}, 300);
+		tglMainSubmenu();
 	});
 
+	/* Валидация */
 
 	if ($('.js-index-form').length) {
 
