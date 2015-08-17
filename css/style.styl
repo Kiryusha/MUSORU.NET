@@ -190,9 +190,65 @@ body
         &:hover
             sprite($fb_logo_hover)
 
-
 .header__social-item + .header__social-item
     margin-left 20px
 
+.header-submenu
+    position absolute
+    left 110px
+    top 91px
+    width 540px
+    min-height 188px
+    background #FF3333
+    display none
+    padding 12px 0 15px
+
+    &:after
+        position absolute
+        content ''
+        left 20px
+        bottom 20px
+        width 482px
+        background #FFF
+        height 1px
+
+    &__list
+        list-style none
+        margin 0
+        max-width 160px
+        padding-left 20px
+        padding-right 20px
+        display inline-block
+        vertical-align top
+        margin-right -.25em
+        min-height 170px
+
+    &__list + &__list
+        border-left 1px solid #FFF
+
+    &__item
+        display block
+
+    &__link
+        position relative
+        display block
+        font-weight 300
+        font-size 11px
+        color #FFF
+        margin-bottom 10px
+
+        &--download:after
+            position absolute
+            content ''
+            top -2px
+            right -18px
+            sprite($download_icon)
+
+    &__close
+        position absolute
+        top 5px
+        right 5px
+        sprite($submenu_close)
+        cursor pointer
 
 
