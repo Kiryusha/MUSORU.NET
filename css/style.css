@@ -365,6 +365,35 @@ body {
   font-size: 22px;
   font-weight: 100;
 }
+.header__scroll-down {
+  display: inline-block;
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  font-size: 11px;
+  font-weight: 100;
+  width: 100px;
+  color: #fff;
+}
+.header__scroll-down:hover {
+  text-decoration: none;
+  color: #f00;
+}
+.header__scroll-down-mouse {
+  display: inline-block;
+  background-image: url("../img/spritesheet.png");
+  background-position: -344px -71px;
+  width: 21px;
+  height: 32px;
+}
+.header__scroll-down:hover .header__scroll-down-mouse {
+  background-image: url("../img/spritesheet.png");
+  background-position: -367px -71px;
+  width: 21px;
+  height: 32px;
+}
 /* Форма в хедере */
 .header-form-wrapper {
   position: absolute;

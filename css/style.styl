@@ -295,6 +295,29 @@ body
         font-size 22px
         font-weight 100
 
+    &__scroll-down
+        display inline-block
+        position absolute
+        bottom 30px
+        left 0
+        right 0
+        margin 0 auto
+        font-size 11px
+        font-weight 100
+        width 100px
+        color #FFF
+
+        &:hover
+            text-decoration none
+            color #FF0000
+
+    &__scroll-down-mouse
+        display inline-block
+        sprite($mouse_icon)
+
+    &__scroll-down:hover &__scroll-down-mouse
+        sprite($mouse_icon_hover)
+
 /* Форма в хедере */
 
 .header-form-wrapper
