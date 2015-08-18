@@ -62,6 +62,7 @@ body {
 }
 /* Основные стили */
 .header {
+  position: relative;
   background-image: url("../img/header-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -102,7 +103,7 @@ body {
 }
 .header__logo {
   background-image: url("../img/spritesheet.png");
-  background-position: 0px 0px;
+  background-position: 0px -71px;
   width: 70px;
   height: 54px;
   bottom: 12px;
@@ -179,19 +180,19 @@ body {
 }
 .header__lang:after {
   background-image: url("../img/spritesheet.png");
-  background-position: -114px -91px;
+  background-position: -93px -106px;
   width: 19px;
   height: 12px;
 }
 .header__mail-link:after {
   background-image: url("../img/spritesheet.png");
-  background-position: -72px -35px;
+  background-position: -114px -106px;
   width: 19px;
   height: 12px;
 }
 .header__mail-link:hover:after {
   background-image: url("../img/spritesheet.png");
-  background-position: -106px -70px;
+  background-position: -72px -106px;
   width: 19px;
   height: 12px;
 }
@@ -210,49 +211,49 @@ body {
 }
 .header__social-item--in {
   background-image: url("../img/spritesheet.png");
-  background-position: -72px 0px;
+  background-position: -72px -71px;
   width: 32px;
   height: 33px;
 }
 .header__social-item--in:hover {
   background-image: url("../img/spritesheet.png");
-  background-position: 0px -91px;
+  background-position: -208px -71px;
   width: 32px;
   height: 33px;
 }
 .header__social-item--gg {
   background-image: url("../img/spritesheet.png");
-  background-position: -106px 0px;
+  background-position: -140px -71px;
   width: 32px;
   height: 33px;
 }
 .header__social-item--gg:hover {
   background-image: url("../img/spritesheet.png");
-  background-position: -68px -56px;
+  background-position: -106px -71px;
   width: 32px;
   height: 33px;
 }
 .header__social-item--tw {
   background-image: url("../img/spritesheet.png");
-  background-position: -106px -35px;
+  background-position: -174px -71px;
   width: 32px;
   height: 33px;
 }
 .header__social-item--tw:hover {
   background-image: url("../img/spritesheet.png");
-  background-position: -34px -91px;
+  background-position: -310px -71px;
   width: 32px;
   height: 33px;
 }
 .header__social-item--fb {
   background-image: url("../img/spritesheet.png");
-  background-position: -34px -56px;
+  background-position: -276px -71px;
   width: 32px;
   height: 33px;
 }
 .header__social-item--fb:hover {
   background-image: url("../img/spritesheet.png");
-  background-position: 0px -56px;
+  background-position: -242px -71px;
   width: 32px;
   height: 33px;
 }
@@ -309,7 +310,7 @@ body {
   top: -2px;
   right: -18px;
   background-image: url("../img/spritesheet.png");
-  background-position: -140px 0px;
+  background-position: 0px -127px;
   width: 13px;
   height: 15px;
 }
@@ -318,7 +319,7 @@ body {
   top: 5px;
   right: 5px;
   background-image: url("../img/spritesheet.png");
-  background-position: -114px -105px;
+  background-position: -438px -71px;
   width: 14px;
   height: 15px;
   cursor: pointer;
@@ -363,4 +364,154 @@ body {
   margin-top: 30px;
   font-size: 22px;
   font-weight: 100;
+}
+/* Форма в хедере */
+.header-form-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-height: 100%;
+  height: 100vh;
+  width: 540px;
+  padding: 0 50px;
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  display: none;
+}
+.header-form-wrapper__close {
+  position: absolute;
+  top: 40px;
+  left: 480px;
+  background-image: url("../img/spritesheet.png");
+  background-position: -414px -71px;
+  width: 22px;
+  height: 21px;
+  cursor: pointer;
+}
+.header-form-wrapper__close:hover {
+  background-image: url("../img/spritesheet.png");
+  background-position: -390px -71px;
+  width: 22px;
+  height: 21px;
+}
+.fancy-form {
+  text-align: center;
+  width: 460px;
+}
+.fancy-form__title {
+  margin-top: 70px;
+  font-size: 36px;
+  font-weight: 100;
+  display: inline-block;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #999;
+  margin-bottom: 25px;
+  color: #fff;
+}
+.fancy-form__field {
+  text-align: left;
+  position: relative;
+  padding: 0.5rem 0 0.5rem 0;
+}
+.fancy-form__field:after,
+.fancy-form__field:before {
+  content: '';
+  height: 0.0625rem;
+  width: 100%;
+  position: absolute;
+  bottom: 0.375rem;
+  left: 0;
+  background-color: #e7e7e7;
+}
+.fancy-form__field:after {
+  background: #f00;
+  box-shadow: 0 -0.0625rem 0 0 #f00;
+  -webkit-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 0.3s;
+          transition: transform 0.3s;
+}
+.fancy-form__field.is-focused::after {
+  -webkit-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+          transform: scaleX(1);
+}
+.fancy-form__label {
+  position: relative;
+  margin: 0;
+  display: block;
+  padding: 0 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: rgba(255,255,255,0.8);
+  font-weight: 400;
+  -webkit-transform: translateY(1.5rem) scale(1.2);
+      -ms-transform: translateY(1.5rem) scale(1.2);
+          transform: translateY(1.5rem) scale(1.2);
+  -webkit-transition: -webkit-transform 0.3s;
+          transition: transform 0.3s;
+  -webkit-transform-origin: 0 50%;
+      -ms-transform-origin: 0 50%;
+          transform-origin: 0 50%;
+}
+.is-focused .fancy-form__label {
+  color: #f00;
+}
+.has-label .fancy-form__label {
+  -webkit-transform: translateY(0) scale(0.85);
+      -ms-transform: translateY(0) scale(0.85);
+          transform: translateY(0) scale(0.85);
+}
+.fancy-form__input {
+  position: relative;
+  display: block;
+  margin-bottom: 0;
+  width: 100%;
+  padding: 0.3rem 0.4rem;
+  line-height: 1rem;
+  font-size: 1rem;
+  background: transparent;
+  border: none;
+  -webkit-appearance: none;
+  outline: none;
+  color: rgba(255,255,255,0.8);
+}
+.fancy-form__submit {
+  margin-top: 40px;
+  font-size: 16px;
+  font-weight: 100;
+  border: none;
+  -webkit-transition: all 0.2s ease 0s;
+          transition: all 0.2s ease 0s;
+}
+.fancy-form__submit:hover {
+  background-color: #dd393a;
+}
+.fancy-form__info {
+  margin-top: 40px;
+  font-weight: 100;
+  font-size: 18px;
+  color: rgba(255,255,255,0.8);
+}
+.fancy-form__info-mail {
+  display: block;
+  font-size: 16px;
+  color: rgba(255,255,255,0.8);
+}
+.fancy-form__success {
+  display: none;
+}
+.fancy-form__success-text {
+  margin-top: 205px;
+  font-size: 30px;
+  font-weight: 100;
+  color: rgba(255,255,255,0.8);
+}
+.fancy-form__success-img {
+  margin-top: 40px;
+  background-image: url("../img/spritesheet.png");
+  background-position: 0px 0px;
+  width: 455px;
+  height: 69px;
 }

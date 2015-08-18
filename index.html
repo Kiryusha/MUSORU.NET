@@ -9,6 +9,8 @@
 		<link href="css/style.css" rel="stylesheet" />
 
 		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/jquery.form.min.js"></script>
+		<script src="js/jquery.maskedinput.min.js"></script>
 		<script src="js/jquery.hoverIntent.minified.js"></script>
 		<script src="js/jquery-ui.min.js"></script>
 		<script src="js/script.js"></script>
@@ -146,7 +148,7 @@
 								<a href="#" class="header__lang">
 									English version:
 								</a>
-								<a href="#" class="header__mail-link">
+								<a href="#" class="header__mail-link js-popup-open">
 									Написать нам:
 								</a>
 								<div class="header__social-group">
@@ -171,6 +173,44 @@
 								Оставить заявку на вывоз
 							</a>
 						</div>
+					</div>
+					<div class="header-form-wrapper js-header-form-wrapper">
+						<span class="header-form-wrapper__close js-popup-close"></span>
+						<form action="" class="fancy-form js-form" method="POST">
+							<div class="fancy-form__content js-form-content">
+								<div class="fancy-form__title">
+									Обратная связь
+								</div>
+								<div class="fancy-form__field js-fancy-field">
+									<label class="fancy-form__label" for="header-input"> Введите Имя</label>
+									<input class="fancy-form__input" id="header-input" required="required" type="text">
+								</div>
+								<div class="fancy-form__field js-fancy-field">
+									<label class="fancy-form__label" for="header-phone"> Введите номер телефона</label>
+									<input class="fancy-form__input js-phone" id="header-phone" required="required" type="text">
+								</div>
+								<div class="fancy-form__field js-fancy-field">
+									<label class="fancy-form__label" for="header-email"> Электронная почта</label>
+									<input class="fancy-form__input" id="header-email" required="required" type="email">
+								</div>
+								<div class="fancy-form__field js-fancy-field">
+									<label class="fancy-form__label" for="header-mess"> Ваш комментарий</label>
+									<input class="fancy-form__input" id="header-mess" required="required" type="text">
+								</div>
+								<input type="submit" class="fancy-form__submit button-fill" value="Отправить запрос">
+								<div class="fancy-form__info">
+									или пишите на<br>
+									<a href="mailto:biz@musory-net.ru" class="fancy-form__info-mail">biz@musory-net.ru</a>
+								</div>
+							</div>
+							<div class="fancy-form__success js-form-success">
+								<div class="fancy-form__success-text">
+									Благодарим Вас за оформление<br>
+									заявки в нашей компании!
+								</div>
+								<div class="fancy-form__success-img"></div>
+							</div>
+						</form>
 					</div>
 				</header>
 			</div>
