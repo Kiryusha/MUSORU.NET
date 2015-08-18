@@ -17,12 +17,13 @@ body
 
 /* Врапперы */
 
-.header
-    width 100%
-    min-width 1200px
-    // max-width 1280px
+.header,
+.step-form-wrapper
+    // width 100%
     // min-width 1200px
-    // margin 0 auto
+    max-width 1280px
+    min-width 1200px
+    margin 0 auto
     position relative
 
 /* Основные стили */
@@ -446,3 +447,211 @@ body
     &__success-img
         margin-top 40px
         sprite($popup_success)
+
+
+/* Блок онлайн заказа */
+
+.step-form-wrapper
+    padding-top 80px
+    background #FFF
+
+.step-form
+    position relative
+    min-height 630px
+    text-align center
+
+    &__title
+        margin-top 0
+        display inline-block
+        font-weight 100
+        font-size 36px
+        color #999
+        position relative
+
+        &:after
+            position absolute
+            content ''
+            bottom 0
+            left 15px
+            right 15px
+            height 1px
+            background rgba(#999, .8)
+
+.step-form-progress-wrapper
+    position absolute
+    top 150px
+    width 100%
+    height 1px
+    background #999
+
+.step-form-progress
+    width 0
+    height 1px
+    background #FF0000
+
+.step-form-nav
+    min-height 45px
+    text-align left
+    color rgba(#999, .9)
+    width 1060px
+    margin 0 auto
+    padding 0 20px
+
+    &__step
+        position relative
+        float left
+        width 25%
+
+    &__step-number,
+    &__step-text
+        display inline-block
+        vertical-align top
+        margin-right -.25em
+
+    &__step-number
+        font-size 11px
+        font-weight 100
+        border 1px solid #999
+        width 18px
+        height 15px
+        padding-top 3px
+        text-align center
+        margin-top 12px
+        border-radius 50%
+        margin-left 0px
+
+    &__step-text
+        font-size 14px
+        font-weight 300
+        margin-top 14px
+        margin-left 10px
+
+    &__step:nth-child(3n) &__step-text
+        margin-top 6px
+
+    &__step--active
+        color #FF0000
+        cursor pointer
+
+        .step-form-nav__step-number
+            border-color #FF0000
+
+.step-form-step
+    min-height 510px
+    border-bottom 1px solid #999
+    color #999
+
+    &__title
+        font-size 24px
+        font-weight 100
+        margin-top 25px
+
+    &__content
+        position relative
+        width 820px
+        margin 0 auto
+
+    &__trash-type-block
+        padding-top 20px
+
+    &__next,
+    &__prev
+        position absolute
+        top 333px
+        font-weight 100
+        padding 6px 11px
+        cursor pointer
+
+    &__next
+        right 0
+
+    &__prev
+        left 0
+
+.button-disabled
+    background #999
+    cursor default
+
+    &:after
+        display none
+
+.trash-type-item
+    position relative
+    display inline-block
+    vertical-align top
+    margin-right -.25em
+    width 218px
+    height 120px
+    border 1px solid rgba(#666, .3)
+    border-radius 20px
+    cursor pointer
+    transition all .4s ease 0s
+    margin-bottom 35px
+    margin-left 75px
+
+    &:nth-child(3n + 1)
+        margin-left 0
+
+    &:hover
+        border-color #FF0000
+        color #FF0000
+
+    &__title
+        margin-top 72px
+        font-size 16px
+        font-weight 100
+
+    &__img
+        position absolute
+        left 0
+        right 0
+        margin 0 auto
+        bottom 53px
+
+        &--type-1
+            sprite($trash_type_1)
+
+        &--type-2
+            sprite($trash_type_2)
+
+        &--type-3
+            sprite($trash_type_3)
+
+        &--type-4
+            sprite($trash_type_4)
+
+        &--type-5
+            sprite($trash_type_5)
+
+        &--type-6
+            sprite($trash_type_6)
+
+    &__success
+        position absolute
+        top -1px
+        left -1px
+        right -1px
+        bottom -1px
+        background rgba(#FFF, .5)
+        opacity 0
+        transition all .4s ease 0s
+
+    &__success-img
+        sprite($step_trash_success)
+
+    &__success-close
+        position absolute
+        top 12px
+        right 12px
+        sprite($step_trash_close)
+        display none
+
+    &--active:hover
+        border-color rgba(#666, .3)
+        color #999
+
+    &--active &__success
+        opacity 1
+
+    &--active &__success-close
+        display block

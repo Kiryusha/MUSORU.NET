@@ -107,4 +107,67 @@ $(document).ready(function () {
 
 	}
 
+	/* Форма онлайн-записи */
+
+	changeProgress();
+
+	function changeProgress(index) {
+		var countAllow = $('.step-form-nav__step--active', $('.js-step-form')).length;
+		var width = 25 * countAllow;
+		$('.js-step-progress').css('width', width + '%');
+	}
+
+	var trashAllow = true;
+
+	/* Клик по навигации */
+
+	$('.js-step-nav').click(function() {
+		if($(this).hasClass('step-form-nav__step--active')) {
+			var index = $(this).index();
+			if (!$('.js-single-step').eq(index).is(':visible')) {
+				$('.js-single-step').hide();
+				$('.js-single-step').eq(index).fadeIn();
+			}
+		}
+	})
+
+	/* Клик выбора типа мусора */
+
+	$('.js-trash-item').click(function() {
+		if (!$(this).hasClass('trash-type-item--active') && trashAllow) {
+			var index = $(this).closest('.js-single-step').index();
+			$('.js-trash-item').removeClass('trash-type-item--active');
+			$(this).addClass('trash-type-item--active');
+			$('.js-trash-value').attr('NAME', '');
+			$('.js-trash-value', $(this)).attr('NAME', 'TRASHTYPE');
+			$('.js-step-nav').eq(index).addClass('step-form-nav__step--active');
+			$('.js-next-step').removeClass('button-disabled')
+			changeProgress();
+			trashAllow = false;
+		}
+		setTimeout(function() {trashAllow = true}, 300);
+    });
+
+	/* Отменить выбор типа мусора */
+
+	$('.js-trash-close').click(function() {
+		var index = $(this).closest('.js-single-step').index();
+		$('.js-trash-item').removeClass('trash-type-item--active');
+		$('.js-trash-value').attr('NAME', '');
+		$('.js-step-nav').eq(index).removeClass('step-form-nav__step--active');
+		$('.js-next-step').addClass('button-disabled')
+		changeProgress();
+		trashAllow = false;
+		setTimeout(function() {trashAllow = true}, 300);
+	});
+
+	/* Переход между шагами */
+
+	$('.js-next-step').click(function() {
+		if (!$(this).hasClass('button-disabled')) {
+			$(this).closest('.js-single-step').hide();
+			$(this).closest('.js-single-step').next().fadeIn();
+		}
+	});
+
 });
