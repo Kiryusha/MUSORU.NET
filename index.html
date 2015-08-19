@@ -13,7 +13,6 @@
 		<script src="js/jquery.maskedinput.min.js"></script>
 		<script src="js/jquery.hoverIntent.minified.js"></script>
 		<script src="js/jquery-ui.min.js"></script>
-		<script src="js/script.js"></script>
 
 	</head>
 	<body>
@@ -265,8 +264,8 @@
 					        <div class="step-form-step js-single-step">
 
 					        	<div class="step-form-step__title">
-					        		Пожалуйста, выберите тип мусора, который необходимо вывезти
-					        	</div>
+									Пожалуйста, выберите тип мусора, который необходимо вывезти
+								</div>
 					        	<div class="step-form-step__content">
 									<div class="step-form-step__trash-type-block">
 										<div class="trash-type-item js-trash-item">
@@ -345,6 +344,27 @@
 
 							</div>
 
+							<div class="step-form-step js-single-step">
+
+								<div class="step-form-step__title">
+									Откуда небоходимо вывезти мусор
+								</div>
+					        	<div class="step-form-step__content">
+									<div class="step-form-step__map" id="map"></div>
+									<script src="js/raphael-min.js"></script>
+									<script src="js/map2.js"></script>
+									<div class="step-district">
+										<div class="step-district__title">
+											Выбранные районы:
+										</div>
+										<div class="step-district__list js-district-list"></div>
+									</div>
+					        	</div>
+					        	<span class="step-form-step__next button-fill js-next-step button-disabled">
+									Следующий шаг
+								</span>
+
+							</div>
 
 						</div>
 					</form>
@@ -355,5 +375,6 @@
 		<div class="footer">
 
 		</div>
+		<script src="js/script.js"></script>
 	</body>
 </html>

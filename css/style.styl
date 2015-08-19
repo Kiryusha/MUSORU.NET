@@ -550,6 +550,7 @@ body
         position relative
         width 820px
         margin 0 auto
+        text-align left
 
     &__trash-type-block
         padding-top 20px
@@ -567,6 +568,15 @@ body
 
     &__prev
         left 0
+
+    &__map,
+    .step-district
+        display inline-block
+        vertical-align top
+        margin-right -.25em
+
+.step-form-step + .step-form-step
+    display none
 
 .button-disabled
     background #999
@@ -588,6 +598,7 @@ body
     transition all .4s ease 0s
     margin-bottom 35px
     margin-left 75px
+    text-align center
 
     &:nth-child(3n + 1)
         margin-left 0
@@ -655,3 +666,34 @@ body
 
     &--active &__success-close
         display block
+
+
+#map
+    position relative
+    width 500px
+    height 440px
+
+    svg
+        width 100%
+        height 100%
+
+.step-district
+    margin-left 80px
+    padding-top 20px
+
+    &__title
+        font-size 16px
+        font-weight 100
+        border-bottom 1px solid #FF0000
+        margin-bottom 10px
+
+    &__item
+        display block
+        font-size 14px
+        font-weight 100
+        margin-bottom 5px
+
+        span
+            display inline-block
+            cursor pointer
+            border-bottom 1px dotted #999
