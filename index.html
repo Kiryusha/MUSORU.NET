@@ -13,12 +13,20 @@
 		<script src="js/jquery.maskedinput.min.js"></script>
 		<script src="js/jquery.hoverIntent.minified.js"></script>
 		<script src="js/jquery-ui.min.js"></script>
+		<script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
 
 	</head>
 	<body>
 		<div class="page-wrapper">
 			<div class="main">
 				<header class="header">
+					<div class="video-wrapper">
+						<video poster="" autoplay="autoplay" loop="loop" preload="auto" muted>
+							<source src="vid/musory_net.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+							<source src="vid/musory_net.webm" type='video/webm; codecs="vp8, vorbis"'>
+							<source src="vid/musory_net.ogv" type='video/ogg; codecs="theora, vorbis"'>
+						</video>
+					</div>
 					<div class="header__content">
 						<div class="header__top">
 							<div class="header__nav-group js-nav-wrapper">
@@ -168,7 +176,7 @@
 								MUSORY-NET помогает бизнесу<br>
 								сфокусироваться на главном
 							</h1>
-							<a href="#" class="header__link-to-form button-fill">
+							<a href="#" class="header__link-to-form button-fill js-to-step-form">
 								Оставить заявку на вывоз
 							</a>
 							<a href="#" class="header__scroll-down">
@@ -216,165 +224,612 @@
 						</form>
 					</div>
 				</header>
+
 				<section class="step-form-wrapper">
-					<div class="step-form-progress-wrapper">
-						<div class="step-form-progress js-step-progress"></div>
-					</div>
-					<form class="step-form js-step-form" action="" method="POST">
-						<h2 class="step-form__title">
-							Онлайн-заявка на вывоз
-						</h2>
-				        <div class="step-form-nav js-step-form-nav clearfix">
-				            <div class="step-form-nav__step js-step-nav">
-				                <span class="step-form-nav__step-number">
-				                    1
-				                </span>
-				                <span class="step-form-nav__step-text">
-				                    Выбор типа
-				                </span>
-				            </div>
-				            <div class="step-form-nav__step js-step-nav">
-				                <span class="step-form-nav__step-number">
-				                    2
-				                </span>
-				                <span class="step-form-nav__step-text">
-				                    Выбор места
-				                </span>
-				            </div>
-				            <div class="step-form-nav__step js-step-nav">
-				                <span class="step-form-nav__step-number">
-				                    3
-				                </span>
-				                <span class="step-form-nav__step-text">
-				                    Расчет кол-ва необходимых<br>
-				                    контейнеров
-				                </span>
-				            </div>
-				            <div class="step-form-nav__step js-step-nav">
-				                <span class="step-form-nav__step-number">
-				                    4
-				                </span>
-				                <span class="step-form-nav__step-text">
-				                    Завершение оформления
-				                </span>
-				            </div>
-				        </div>
-				        <div class="step-form__steps">
+					<form action="" class="step-form js-step-form js-form" method="POST">
+						<div class="step-form-progress-wrapper">
+							<div class="step-form-progress js-step-progress"></div>
+						</div>
+						<div class="step-form__inner">
+							<h2 class="step-form__title section-title">
+								Онлайн-заявка на вывоз
+							</h2>
+					        <div class="step-form-nav js-step-form-nav clearfix">
+					            <div class="step-form-nav__step js-step-nav step-form-nav__step--active">
+					                <span class="step-form-nav__step-number">
+					                    1
+					                </span>
+					                <span class="step-form-nav__step-text">
+					                    Выбор типа
+					                </span>
+					            </div>
+					            <div class="step-form-nav__step js-step-nav">
+					                <span class="step-form-nav__step-number">
+					                    2
+					                </span>
+					                <span class="step-form-nav__step-text">
+					                    Выбор места
+					                </span>
+					            </div>
+					            <div class="step-form-nav__step js-step-nav">
+					                <span class="step-form-nav__step-number">
+					                    3
+					                </span>
+					                <span class="step-form-nav__step-text">
+					                    Расчет кол-ва необходимых<br>
+					                    контейнеров
+					                </span>
+					            </div>
+					            <div class="step-form-nav__step js-step-nav">
+					                <span class="step-form-nav__step-number">
+					                    4
+					                </span>
+					                <span class="step-form-nav__step-text">
+					                    Завершение оформления
+					                </span>
+					            </div>
+					        </div>
+					        <div class="step-form__steps">
 
-					        <div class="step-form-step js-single-step">
+						        <div class="step-form-step js-single-step">
 
-					        	<div class="step-form-step__title">
-									Пожалуйста, выберите тип мусора, который необходимо вывезти
-								</div>
-					        	<div class="step-form-step__content">
-									<div class="step-form-step__trash-type-block">
-										<div class="trash-type-item js-trash-item">
-											<div class="trash-type-item__img trash-type-item__img--type-1"></div>
-											<div class="trash-type-item__title">
-												Строительный мусор
-											</div>
-											<div class="trash-type-item__success js-trash-success">
-												<div class="trash-type-item__success-img absl-cntr"></div>
-												<div class="trash-type-item__success-close js-trash-close"></div>
-											</div>
-											<input type="hidden" class="trash-type-item__input js-trash-value" value="Строительный мусор">
-										</div>
-										<div class="trash-type-item js-trash-item">
-											<div class="trash-type-item__img trash-type-item__img--type-2"></div>
-											<div class="trash-type-item__title">
-												ТБО и промышленный<br>
-												мусор
-											</div>
-											<div class="trash-type-item__success js-trash-success">
-												<div class="trash-type-item__success-img absl-cntr"></div>
-												<div class="trash-type-item__success-close js-trash-close"></div>
-											</div>
-											<input type="hidden" class="trash-type-item__input js-trash-value" value="ТБО и промышленный мусор">
-										</div>
-										<div class="trash-type-item js-trash-item">
-											<div class="trash-type-item__img trash-type-item__img--type-3"></div>
-											<div class="trash-type-item__title">
-												Грунт
-											</div>
-											<div class="trash-type-item__success js-trash-success">
-												<div class="trash-type-item__success-img absl-cntr"></div>
-												<div class="trash-type-item__success-close js-trash-close"></div>
-											</div>
-											<input type="hidden" class="trash-type-item__input js-trash-value" value="Грунт">
-										</div>
-										<div class="trash-type-item js-trash-item">
-											<div class="trash-type-item__img trash-type-item__img--type-4"></div>
-											<div class="trash-type-item__title">
-												Смешанный мусор
-											</div>
-											<div class="trash-type-item__success js-trash-success">
-												<div class="trash-type-item__success-img absl-cntr"></div>
-												<div class="trash-type-item__success-close js-trash-close"></div>
-											</div>
-											<input type="hidden" class="trash-type-item__input js-trash-value" value="Смешанный мусор">
-										</div>
-										<div class="trash-type-item js-trash-item">
-											<div class="trash-type-item__img trash-type-item__img--type-5"></div>
-											<div class="trash-type-item__title">
-												Крупногабаритный<br>
-												мусор
-											</div>
-											<div class="trash-type-item__success js-trash-success">
-												<div class="trash-type-item__success-img absl-cntr"></div>
-												<div class="trash-type-item__success-close js-trash-close"></div>
-											</div>
-											<input type="hidden" class="trash-type-item__input js-trash-value" value="Крупногабаритный мусор">
-										</div>
-										<div class="trash-type-item js-trash-item">
-											<div class="trash-type-item__img trash-type-item__img--type-6"></div>
-											<div class="trash-type-item__title">
-												Снег
-											</div>
-											<div class="trash-type-item__success js-trash-success">
-												<div class="trash-type-item__success-img absl-cntr"></div>
-												<div class="trash-type-item__success-close js-trash-close"></div>
-											</div>
-											<input type="hidden" class="trash-type-item__input js-trash-value" value="Снег">
-										</div>
+						        	<div class="step-form-step__title">
+										Пожалуйста, выберите тип мусора, который необходимо вывезти
 									</div>
-									<span class="step-form-step__next button-fill js-next-step button-disabled">
-										Следующий шаг
+						        	<div class="step-form-step__content">
+										<div class="step-form-step__trash-type-block">
+											<div class="trash-type-item js-trash-item">
+												<div class="trash-type-item__img trash-type-item__img--type-1"></div>
+												<div class="trash-type-item__title">
+													Строительный мусор
+												</div>
+												<div class="trash-type-item__success js-trash-success">
+													<div class="trash-type-item__success-img absl-cntr"></div>
+													<div class="trash-type-item__success-close js-trash-close"></div>
+												</div>
+												<input type="hidden" class="trash-type-item__input js-trash-value" value="Строительный мусор">
+											</div>
+											<div class="trash-type-item js-trash-item">
+												<div class="trash-type-item__img trash-type-item__img--type-2"></div>
+												<div class="trash-type-item__title">
+													ТБО и промышленный<br>
+													мусор
+												</div>
+												<div class="trash-type-item__success js-trash-success">
+													<div class="trash-type-item__success-img absl-cntr"></div>
+													<div class="trash-type-item__success-close js-trash-close"></div>
+												</div>
+												<input type="hidden" class="trash-type-item__input js-trash-value" value="ТБО и промышленный мусор">
+											</div>
+											<div class="trash-type-item js-trash-item">
+												<div class="trash-type-item__img trash-type-item__img--type-3"></div>
+												<div class="trash-type-item__title">
+													Грунт
+												</div>
+												<div class="trash-type-item__success js-trash-success">
+													<div class="trash-type-item__success-img absl-cntr"></div>
+													<div class="trash-type-item__success-close js-trash-close"></div>
+												</div>
+												<input type="hidden" class="trash-type-item__input js-trash-value" value="Грунт">
+											</div>
+											<div class="trash-type-item js-trash-item">
+												<div class="trash-type-item__img trash-type-item__img--type-4"></div>
+												<div class="trash-type-item__title">
+													Смешанный мусор
+												</div>
+												<div class="trash-type-item__success js-trash-success">
+													<div class="trash-type-item__success-img absl-cntr"></div>
+													<div class="trash-type-item__success-close js-trash-close"></div>
+												</div>
+												<input type="hidden" class="trash-type-item__input js-trash-value" value="Смешанный мусор">
+											</div>
+											<div class="trash-type-item js-trash-item">
+												<div class="trash-type-item__img trash-type-item__img--type-5"></div>
+												<div class="trash-type-item__title">
+													Крупногабаритный<br>
+													мусор
+												</div>
+												<div class="trash-type-item__success js-trash-success">
+													<div class="trash-type-item__success-img absl-cntr"></div>
+													<div class="trash-type-item__success-close js-trash-close"></div>
+												</div>
+												<input type="hidden" class="trash-type-item__input js-trash-value" value="Крупногабаритный мусор">
+											</div>
+											<div class="trash-type-item js-trash-item">
+												<div class="trash-type-item__img trash-type-item__img--type-6"></div>
+												<div class="trash-type-item__title">
+													Снег
+												</div>
+												<div class="trash-type-item__success js-trash-success">
+													<div class="trash-type-item__success-img absl-cntr"></div>
+													<div class="trash-type-item__success-close js-trash-close"></div>
+												</div>
+												<input type="hidden" class="trash-type-item__input js-trash-value" value="Снег">
+											</div>
+										</div>
+										<span class="step-form-step__next button-fill js-next-step button-disabled">
+											Следующий шаг
+										</span>
+									</div>
+
+								</div>
+
+								<div class="step-form-step js-single-step">
+
+									<div class="step-form-step__title">
+										Откуда небоходимо вывезти мусор
+									</div>
+						        	<div class="step-form-step__content">
+
+										<div class="step-form-step__map" id="map"></div>
+										<script src="js/raphael-min.js"></script>
+										<script src="js/map2.js"></script>
+
+										<div class="step-district">
+											<div class="step-district__title">
+												Выбранные районы:
+											</div>
+											<div class="step-district__list js-district-list"></div>
+											<div class="add-dist-block js-add-dist-block">
+												<div class="add-dist-block__title">
+													Если Вы не нашли на карте Ваш район - впишите его самостоятельно:
+												</div>
+												<input type="text" class="add-dist-block__input" placeholder="Впишите название района">
+											</div>
+										</div>
+										<span class="step-form-step__prev button-fill js-prev-step">
+											Предыдущий шаг
+										</span>
+										<span class="step-form-step__next button-fill js-next-step button-disabled">
+											Следующий шаг
+										</span>
+						        	</div>
+
+								</div>
+
+								<div class="step-form-step js-single-step">
+
+									<div class="step-form-step__title">
+										Выберите необходимое кол-во контейнеров
+									</div>
+						        	<div class="step-form-step__content">
+
+										<div class="step-cont-type-block">
+											<div class="step-cont-type js-cont-type">
+												<img src="img/cont8m.png" alt="" class="step-cont-type__img">
+												<div class="step-cont-type__title">
+													8м<sup>3</sup>
+												</div>
+											</div>
+											<div class="step-cont-type js-cont-type">
+												<img src="img/cont20m.png" alt="" class="step-cont-type__img">
+												<div class="step-cont-type__title">
+													20м<sup>3</sup>
+												</div>
+											</div>
+											<div class="step-cont-type js-cont-type">
+												<img src="img/cont27m.png" alt="" class="step-cont-type__img">
+												<div class="step-cont-type__title">
+													27м<sup>3</sup>
+												</div>
+											</div>
+										</div>
+
+										<div class="cont-type-slider">
+											<div class="cont-type-slider__item hidden js-cont-slide">
+												<div class="cont-type-slider__img-wrapper">
+													<img src="img/cont8m.png" alt="" class="cont-type-slider__img">
+												</div>
+												<div class="cont-type-slider__text-block">
+													<div class="cont-type-slider__text">
+														Контейнер емкостью 8 м3 используется для сбора большого количества мусора. Есть смысл устанавливать именно такие контейнеры на мусорных площадках
+													</div>
+													<div class="cont-type-slider__input-wrapper">
+														<div class="cont-type-slider__input-wrapper-text">
+															Количество контейнеров:
+														</div>
+														<input type="text" class="cont-type-slider__input" name="Контейнеры 8м3">
+													</div>
+												</div>
+											</div>
+											<div class="cont-type-slider__item hidden js-cont-slide">
+												<div class="cont-type-slider__img-wrapper">
+													<img src="img/cont20m.png" alt="" class="cont-type-slider__img">
+												</div>
+												<div class="cont-type-slider__text-block">
+													<div class="cont-type-slider__text">
+														Контейнер емкостью 8 м3 используется для сбора большого количества мусора. Есть смысл устанавливать именно такие контейнеры на мусорных площадках
+													</div>
+													<div class="cont-type-slider__input-wrapper">
+														<div class="cont-type-slider__input-wrapper-text">
+															Количество контейнеров:
+														</div>
+														<input type="text" class="cont-type-slider__input" name="Контейнеры 20м3">
+													</div>
+												</div>
+											</div>
+											<div class="cont-type-slider__item hidden js-cont-slide">
+												<div class="cont-type-slider__img-wrapper">
+													<img src="img/cont27m.png" alt="" class="cont-type-slider__img">
+												</div>
+												<div class="cont-type-slider__text-block">
+													<div class="cont-type-slider__text">
+														Контейнер емкостью 8 м3 используется для сбора большого количества мусора. Есть смысл устанавливать именно такие контейнеры на мусорных площадках
+													</div>
+													<div class="cont-type-slider__input-wrapper">
+														<div class="cont-type-slider__input-wrapper-text">
+															Количество контейнеров:
+														</div>
+														<input type="text" class="cont-type-slider__input" name="Контейнеры 27м3">
+													</div>
+												</div>
+											</div>
+										</div>
+										<span class="step-form-step__prev button-fill js-prev-step">
+											Предыдущий шаг
+										</span>
+										<span class="step-form-step__next button-fill js-next-step button-disabled">
+											Следующий шаг
+										</span>
+						        	</div>
+
+								</div>
+
+								<div class="step-form-step js-single-step">
+
+									<div class="step-form-step__title">
+										Контактные данные для связи
+									</div>
+						        	<div class="step-form-step__content">
+
+										<div class="step-form-step__form-wrapper fancy-form">
+											<div class="fancy-form__content js-form-content">
+												<div class="fancy-form__subtitle">
+													Для того, чтобы мы могли с Вами связаться, пожалуйста, оставьте нам Ваш номер телефона или адрес электронной почты.
+												</div>
+												<div class="fancy-form__field js-fancy-field">
+													<label class="fancy-form__label" for="step-form-input"> Введите Имя</label>
+													<input class="fancy-form__input" id="step-form-input" required="required" type="text" autocomplete="off">
+												</div>
+												<div class="fancy-form__field js-fancy-field">
+													<label class="fancy-form__label" for="step-form-phone"> Введите номер телефона</label>
+													<input class="fancy-form__input js-phone" id="step-form-phone" required="required" type="text" autocomplete="off">
+												</div>
+												<div class="fancy-form__field js-fancy-field">
+													<label class="fancy-form__label" for="step-form-email"> Электронная почта</label>
+													<input class="fancy-form__input" id="step-form-email" required="required" type="email" autocomplete="off">
+												</div>
+												<div class="fancy-form__field js-fancy-field">
+													<label class="fancy-form__label" for="step-form-mess"> Ваш комментарий</label>
+													<input class="fancy-form__input" id="step-form-mess" required="required" type="text" autocomplete="off">
+												</div>
+												<input type="submit" class="fancy-form__submit button-fill" value="Отправить заявку">
+												<div class="fancy-form__info">
+													или пишите на<br>
+													<a href="mailto:biz@musory-net.ru" class="fancy-form__info-mail">biz@musory-net.ru</a>
+												</div>
+											</div>
+										</div>
+										<div class="fancy-form__success js-form-success">
+											<div class="fancy-form__success-text fancy-form__success-text--step">
+												Благодарим Вас за оформление<br>
+												заявки в нашей компании!
+											</div>
+											<div class="fancy-form__success-img fancy-form__success-img--step">
+										</div>
+						        	</div>
+									<span class="step-form-step__prev button-fill js-prev-step">
+										Предыдущий шаг
 									</span>
 								</div>
 
 							</div>
-
-							<div class="step-form-step js-single-step">
-
-								<div class="step-form-step__title">
-									Откуда небоходимо вывезти мусор
-								</div>
-					        	<div class="step-form-step__content">
-									<div class="step-form-step__map" id="map"></div>
-									<script src="js/raphael-min.js"></script>
-									<script src="js/map2.js"></script>
-									<div class="step-district">
-										<div class="step-district__title">
-											Выбранные районы:
-										</div>
-										<div class="step-district__list js-district-list"></div>
-									</div>
-					        	</div>
-					        	<span class="step-form-step__next button-fill js-next-step button-disabled">
-									Следующий шаг
-								</span>
-
-							</div>
-
 						</div>
 					</form>
 				</section>
+
+				<section class="buisness-conditions-wrapper">
+					<div class="buisness-conditions">
+						<h2 class="buisness-conditions__title section-title">
+							Гибкие условия для Вашего бизнеса
+						</h2>
+						<div class="buisness-conditions__item-container">
+							<div class="buis-cond-item">
+								<div class="buis-cond-item__img-wrapper">
+									<div class="buis-cond-item__img buis-cond-item__img--calendar"></div>
+								</div>
+								<div class="buis-cond-item__title">
+									Долгосрочное планирование
+								</div>
+								<div class="buis-cond-item__text">
+									Вы можете заранее спланировать вывоз мусора в полном объеме
+								</div>
+							</div>
+							<div class="buis-cond-item">
+								<div class="buis-cond-item__img-wrapper">
+									<div class="buis-cond-item__img buis-cond-item__img--auto"></div>
+								</div>
+								<div class="buis-cond-item__title">
+									Любые объемы вывоза
+								</div>
+								<div class="buis-cond-item__text">
+									Вы можете поручить нам вывоз любых объемов мусора
+								</div>
+							</div>
+							<div class="buis-cond-item">
+								<div class="buis-cond-item__img-wrapper">
+									<div class="buis-cond-item__img buis-cond-item__img--24"></div>
+								</div>
+								<div class="buis-cond-item__title">
+									Вывоз без простоев
+								</div>
+								<div class="buis-cond-item__text">
+									Круглосуточный вывоз мусора, включая выходные  и праздничные дни
+								</div>
+							</div>
+							<div class="buis-cond-item">
+								<div class="buis-cond-item__img-wrapper">
+									<div class="buis-cond-item__img buis-cond-item__img--clock"></div>
+								</div>
+								<div class="buis-cond-item__title">
+									Точное время подачи
+								</div>
+								<div class="buis-cond-item__text">
+									Назначение даты и точного времени подачи машин для вывоза мусора
+								</div>
+							</div>
+
+							<div class="buis-cond-item">
+								<div class="buis-cond-item__img-wrapper">
+									<div class="buis-cond-item__img buis-cond-item__img--sale"></div>
+								</div>
+								<div class="buis-cond-item__title">
+									Скидочная система
+								</div>
+								<div class="buis-cond-item__text">
+									Размер скидки зависит от объема вывозимого мусора
+								</div>
+							</div>
+							<div class="buis-cond-item">
+								<div class="buis-cond-item__img-wrapper">
+									<div class="buis-cond-item__img buis-cond-item__img--serv"></div>
+								</div>
+								<div class="buis-cond-item__title">
+									Клиентский сервис
+								</div>
+								<div class="buis-cond-item__text">
+									Бесплатная предварительная консультация и калькуляция стоимости заказа, учитывая входные данные от клиента
+								</div>
+							</div>
+							<div class="buis-cond-item">
+								<div class="buis-cond-item__img-wrapper">
+									<div class="buis-cond-item__img buis-cond-item__img--jur"></div>
+								</div>
+								<div class="buis-cond-item__title">
+									Прозрачность сделок
+								</div>
+								<div class="buis-cond-item__text">
+									Предоставляем Вам  отчеты о проделанной работе и квитанции об оплате услуг
+								</div>
+							</div>
+							<div class="buis-cond-item">
+								<div class="buis-cond-item__img-wrapper">
+									<div class="buis-cond-item__img buis-cond-item__img--snow"></div>
+								</div>
+								<div class="buis-cond-item__title">
+									Предзаказ на вывоз снега
+								</div>
+								<div class="buis-cond-item__text">
+									Вы можете заранее заключить с нами договор о вывозе снега с фиксированной ценой
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="clients-section-wrapper">
+					<div class="clients-section">
+						<h2 class="clients-section__title section-title">
+							Нам доверяют
+						</h2>
+						<div class="client-wrapper">
+							<a class="client-item" href="#" title="">
+								<span class="center-helper"></span>
+								<img class="client-img" src="img/rjd-logo.png" alt="">
+							</a>
+							<a class="client-item" href="#" title="">
+								<span class="center-helper"></span>
+								<img class="client-img" src="img/mosp-logo.png" alt="">
+							</a>
+							<a class="client-item" href="#" title="">
+								<span class="center-helper"></span>
+								<img class="client-img" src="img/ati-logo.png" alt="">
+							</a>
+							<a class="client-item" href="#" title="">
+								<span class="center-helper"></span>
+								<img class="client-img" src="img/kit-logo.png" alt="">
+							</a>
+							<a class="client-item" href="#" title="">
+								<span class="center-helper"></span>
+								<img class="client-img" src="img/stra-logo.png" alt="">
+							</a>
+							<a class="client-item" href="#" title="">
+								<span class="center-helper"></span>
+								<img class="client-img" src="img/krost-logo.png" alt="">
+							</a>
+							<a class="client-item" href="#" title="">
+								<span class="center-helper"></span>
+								<img class="client-img" src="img/mon-logo.png" alt="">
+							</a>
+							<a class="client-item" href="#" title="">
+								<span class="center-helper"></span>
+								<img class="client-img" src="img/td-logo.png" alt="">
+							</a>
+						</div>
+					</div>
+				</section>
+
+				<section class="articles-section-wrapper">
+					<div class="articles-section">
+						<h2 class="articles-section__title section-title">
+							Профессиональные статьи
+						</h2>
+						<div class="articles-section__item-container">
+							<div class="article-item">
+								<div class="article-item__date">
+									<span class="red">25</span>июля
+								</div>
+								<a href="#" class="article-item__title">
+									ВСТУПИЛИ В СИЛУ НОВЫЕ ТАРИФЫ НА ВЫВОЗ
+								</a>
+								<div class="article-item__text">
+									В Центральном доме архитектора прошла публичная защита проектов и определеныпобедители открытого архитектурно-градостроительного смотра-конкурса молодых архитекторов «Перспектива» на
+								</div>
+								<a href="#" class="article-item__link">
+									Читать
+								</a>
+							</div>
+							<div class="article-item">
+								<div class="article-item__date">
+									<span class="red">25</span>июля
+								</div>
+								<a href="#" class="article-item__title">
+									ВСТУПИЛИ В СИЛУ НОВЫЕ ТАРИФЫ НА ВЫВОЗ
+								</a>
+								<div class="article-item__text">
+									В Центральном доме архитектора прошла публичная защита проектов и определеныпобедители открытого архитектурно-градостроительного смотра-конкурса молодых архитекторов «Перспектива» на
+								</div>
+								<a href="#" class="article-item__link">
+									Читать
+								</a>
+							</div>
+							<div class="article-item">
+								<div class="article-item__date">
+									<span class="red">25</span>июля
+								</div>
+								<a href="#" class="article-item__title">
+									ВСТУПИЛИ В СИЛУ НОВЫЕ ТАРИФЫ НА ВЫВОЗ
+								</a>
+								<div class="article-item__text">
+									В Центральном доме архитектора прошла публичная защита проектов и определеныпобедители открытого архитектурно-градостроительного смотра-конкурса молодых архитекторов «Перспектива» на
+								</div>
+								<a href="#" class="article-item__link">
+									Читать
+								</a>
+							</div>
+							<div class="article-item">
+								<div class="article-item__date">
+									<span class="red">25</span>июля
+								</div>
+								<a href="#" class="article-item__title">
+									ВСТУПИЛИ В СИЛУ НОВЫЕ ТАРИФЫ НА ВЫВОЗ
+								</a>
+								<div class="article-item__text">
+									В Центральном доме архитектора прошла публичная защита проектов и определеныпобедители открытого архитектурно-градостроительного смотра-конкурса молодых архитекторов «Перспектива» на
+								</div>
+								<a href="#" class="article-item__link">
+									Читать
+								</a>
+							</div>
+							<div class="article-item">
+								<div class="article-item__date">
+									<span class="red">25</span>июля
+								</div>
+								<a href="#" class="article-item__title">
+									ВСТУПИЛИ В СИЛУ НОВЫЕ ТАРИФЫ НА ВЫВОЗ
+								</a>
+								<div class="article-item__text">
+									В Центральном доме архитектора прошла публичная защита проектов и определеныпобедители открытого архитектурно-градостроительного смотра-конкурса молодых архитекторов «Перспектива» на
+								</div>
+								<a href="#" class="article-item__link">
+									Читать
+								</a>
+							</div>
+							<div class="article-item">
+								<div class="article-item__date">
+									<span class="red">25</span>июля
+								</div>
+								<a href="#" class="article-item__title">
+									ВСТУПИЛИ В СИЛУ НОВЫЕ ТАРИФЫ НА ВЫВОЗ
+								</a>
+								<div class="article-item__text">
+									В Центральном доме архитектора прошла публичная защита проектов и определеныпобедители открытого архитектурно-градостроительного смотра-конкурса молодых архитекторов «Перспектива» на
+								</div>
+								<a href="#" class="article-item__link">
+									Читать
+								</a>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="form-section-wrapper">
+					<div class="form-section">
+						<h2 class="clients-section__title section-title">
+							Обратная связь
+						</h2>
+						<form class="form-section__form fancy-form" action="" method="POST">
+							<div class="fancy-form__content js-form-content">
+								<div class="fancy-form__subtitle">
+									Свяжитесь с нами и получите бесплатную оценку стоимости вывоза и утилизации мусора
+								</div>
+								<div class="fancy-form__field js-fancy-field">
+									<label class="fancy-form__label" for="step-form-input"> Введите Имя</label>
+									<input class="fancy-form__input" id="step-form-input" required="required" type="text" autocomplete="off">
+								</div>
+								<div class="fancy-form__field js-fancy-field">
+									<label class="fancy-form__label" for="step-form-phone"> Введите номер телефона</label>
+									<input class="fancy-form__input js-phone" id="step-form-phone" required="required" type="text" autocomplete="off">
+								</div>
+								<div class="fancy-form__field js-fancy-field">
+									<label class="fancy-form__label" for="step-form-email"> Электронная почта</label>
+									<input class="fancy-form__input" id="step-form-email" required="required" type="email" autocomplete="off">
+								</div>
+								<div class="fancy-form__field js-fancy-field">
+									<label class="fancy-form__label" for="step-form-mess"> Ваш комментарий</label>
+									<input class="fancy-form__input" id="step-form-mess" required="required" type="text" autocomplete="off">
+								</div>
+								<input type="submit" class="fancy-form__submit button-fill" value="Отправить заявку">
+								<div class="fancy-form__info">
+									или пишите на<br>
+									<a href="mailto:biz@musory-net.ru" class="fancy-form__info-mail">biz@musory-net.ru</a>
+								</div>
+							</div>
+							<div class="fancy-form__success js-form-success">
+								<div class="fancy-form__success-text fancy-form__success-text--step">
+									Благодарим Вас за оформление<br>
+									заявки в нашей компании!
+								</div>
+								<div class="fancy-form__success-img fancy-form__success-img--step">
+							</div>
+		        		</form>
+		        	</div>
+				</section>
+
+				<div class="footer clearfix">
+					<div id="ya-map"></div>
+
+					<div class="footer__copyrights">
+						<div class="footer__owner">
+							© 2015 MUSORY-NET. 	ALL RIGHTS RESERVED
+						</div>
+						<div class="footer__social-group">
+							<div class="header__social-title">
+								Компания в деловых соц. сетях:
+							</div>
+							<div class="footer__social-list">
+								<a href="#" class="footer__social-item footer__social-item--in"></a>
+								<a href="#" class="footer__social-item footer__social-item--gg"></a>
+								<a href="#" class="footer__social-item footer__social-item--tw"></a>
+								<a href="#" class="footer__social-item footer__social-item--fb"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+
 			</div>
 		</div>
 
-		<div class="footer">
-
-		</div>
 		<script src="js/script.js"></script>
 	</body>
 </html>
