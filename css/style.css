@@ -60,6 +60,13 @@ body {
 .main--no-footer {
   padding-bottom: 150px;
 }
+.history-bg {
+  background-image: url("../img/history-bg.jpg");
+  background-repeat: none;
+  background-position: center top;
+  background-size: cover;
+  min-height: 800px;
+}
 /* Обёртки */
 .header,
 .step-form-wrapper,
@@ -72,7 +79,8 @@ body {
 .breadcrumbs,
 .tabs-section,
 .inner-form-section,
-.busy-sec {
+.busy-sec,
+.history-bg {
   max-width: 1280px;
   min-width: 1200px;
   margin: 0 auto;
@@ -1493,6 +1501,9 @@ video {
   font-weight: 300;
   position: relative;
 }
+.breadcrumbs__item--history {
+  color: #fff;
+}
 .breadcrumbs__item:after {
   content: '';
   position: absolute;
@@ -1557,11 +1568,19 @@ video {
   display: block;
   margin: 40px 0;
 }
+.page-content__subtitle--history {
+  margin-top: 10px;
+  text-align: center;
+  color: #fff;
+}
 .page-content__text {
   text-align: left;
   font-size: 18px;
   font-weight: 100;
   color: #999;
+}
+.page-content__text--history {
+  color: #fff;
 }
 .page-content__text--centered {
   text-align: center;
