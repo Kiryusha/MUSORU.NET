@@ -1346,12 +1346,29 @@ video
     text-align center
     margin-bottom 50px
     overflow hidden
+    position relative
 
     &__img-wide
         width 100%
 
+        &--contacts
+            position absolute
+            width 1054px
+            height 470px
+            top 95px
+            left 20px
+            z-index 0
+            width auto
+
     &--inner
         width auto
+
+    &--contacts
+        height 470px
+
+    &--contacts &__text
+        position relative
+        z-index 10
 
     &--last
         margin-bottom 0
@@ -1385,6 +1402,14 @@ video
         &--small
             width 820px
             margin 0 auto
+
+    &__tel,
+    &__mail
+        color #999
+        text-decoration none
+
+    &__mail
+        text-decoration underline
 
     &__ul-list
         text-align left
@@ -1509,6 +1534,14 @@ video
         color #999
         font-size 14px
         padding 10px 0
+
+.price-table--tp
+
+     .price-table__cell:first-child,
+     .price-table__head:first-child
+        width 130px
+        text-align left
+        padding-left 20px
 
 .inner-form-section
     border-top 1px solid transparent

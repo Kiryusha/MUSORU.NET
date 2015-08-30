@@ -1513,12 +1513,29 @@ video {
   text-align: center;
   margin-bottom: 50px;
   overflow: hidden;
+  position: relative;
 }
 .page-content__img-wide {
   width: 100%;
 }
+.page-content__img-wide--contacts {
+  position: absolute;
+  width: 1054px;
+  height: 470px;
+  top: 95px;
+  left: 20px;
+  z-index: 0;
+  width: auto;
+}
 .page-content--inner {
   width: auto;
+}
+.page-content--contacts {
+  height: 470px;
+}
+.page-content--contacts .page-content__text {
+  position: relative;
+  z-index: 10;
 }
 .page-content--last {
   margin-bottom: 0;
@@ -1552,6 +1569,14 @@ video {
 .page-content__text--small {
   width: 820px;
   margin: 0 auto;
+}
+.page-content__tel,
+.page-content__mail {
+  color: #999;
+  text-decoration: none;
+}
+.page-content__mail {
+  text-decoration: underline;
 }
 .page-content__ul-list {
   text-align: left;
@@ -1677,6 +1702,12 @@ video {
   color: #999;
   font-size: 14px;
   padding: 10px 0;
+}
+.price-table--tp .price-table__cell:first-child,
+.price-table--tp .price-table__head:first-child {
+  width: 130px;
+  text-align: left;
+  padding-left: 20px;
 }
 .inner-form-section {
   border-top: 1px solid transparent;
