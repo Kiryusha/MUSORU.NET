@@ -15,19 +15,44 @@ body
     background #F7FAFC
     min-width 1200px
 
+    &--inner
+        background #FFF
+
+/* Обёртки */
+
 .header,
 .step-form-wrapper,
 .buisness-conditions-wrapper,
 .clients-section-wrapper,
 .articles-section-wrapper,
 .form-section-wrapper,
-.footer
+.footer,
+.inner-header,
+.breadcrumbs,
+.tabs-section,
+.page-content,
+.inner-form-section,
+.busy-sec
     // width 100%
     // min-width 1200px
     max-width 1280px
     min-width 1200px
     margin 0 auto
     position relative
+
+/* Контент-обёртки */
+
+.header__content,
+.inner-header__content,
+.breadcrumbs__content,
+.tabs-section__content,
+.inner-form-section__content,
+.busy-sec__content
+    position relative
+    z-index 100
+    width 1160px
+    margin 0 auto
+    padding 0 20px
 
 /* Основные стили */
 
@@ -38,13 +63,6 @@ body
     background-size cover
     background-position center center
     min-height 590px
-
-    &__content
-        position relative
-        z-index 100
-        width 1160px
-        margin 0 auto
-        padding 0 20px
 
     &__nav-group
         position relative
@@ -138,6 +156,10 @@ body
         color #FFF
         margin-bottom 5px
 
+        &--inner
+            font-size 11px
+            font-weight 300
+
         &:after
             position absolute
             content ''
@@ -166,6 +188,10 @@ body
         color #FFF
         font-size 14px
         margin-bottom 10px
+
+        &--inner
+            font-size 11px
+            font-weight 300
 
 .header__social-item
     display inline-block
@@ -205,17 +231,23 @@ body
     left 110px
     top 91px
     width 540px
-    min-height 188px
+    min-height 183px
     background #FF3333
     display none
-    padding 12px 0 15px
+    padding 12px 0 20px
+
+    &--inner
+        top 66px
+        left auto
+        right 24px
+        width auto
 
     &:after
         position absolute
         content ''
         left 20px
         bottom 20px
-        width 482px
+        right 20px
         background #FFF
         height 1px
 
@@ -229,6 +261,7 @@ body
         vertical-align top
         margin-right -.25em
         min-height 170px
+        margin-bottom 10px
 
     &__list + &__list
         border-left 1px solid #FFF
@@ -257,6 +290,43 @@ body
         right 5px
         sprite($submenu_close)
         cursor pointer
+
+    &__list-headings
+        width 508px
+        border-bottom 1px solid #FFF
+        margin-left 20px
+        margin-bottom 15px
+
+    &__list-heading
+        display inline-block
+        vertical-align middle
+        margin-left 40px
+        color #FFF
+        font-size 11px
+        font-weight 300
+        padding-bottom 5px
+
+        &:nth-child(1)
+            margin-left 40px
+
+        &:nth-child(2)
+            margin-left 100px
+
+        &:nth-child(3)
+            margin-left 100px
+
+    &__soc-block
+        display inline-block
+        vertical-align top
+        border-left 1px solid #FFF
+        padding 30px 20px 35px
+        margin -35px 0 0 20px
+
+.header-submenu--inner
+
+    .header-submenu__list
+        max-width none
+        min-height 133px
 
 /* Основная часть хедера */
 
@@ -450,8 +520,12 @@ body
     &__success
         display none
 
+        &--inner
+            width 1000px
+            margin-left -58%
+
     &__success-text
-        margin-top 205px
+        padding-top 205px
         font-size 30px
         font-weight 100
         color rgba(#FFF, .8)
@@ -462,6 +536,9 @@ body
             padding-top 100px
             font-size 44px
             color #999
+
+        &--inner
+            padding-top 20px
 
     &__success-img
         margin-top 40px
@@ -914,7 +991,7 @@ body
 .clients-section-wrapper
     background-color #FFF
     text-align center
-    border-top 1px solid #999
+    border-top 1px solid #CCC
 
 .clients-section
 
@@ -950,7 +1027,7 @@ body
 .articles-section-wrapper
     background-color #FFF
     text-align center
-    border-top 1px solid #999
+    border-top 1px solid #CCC
     min-height 720px
 
 .articles-section
@@ -1027,7 +1104,7 @@ body
     background-color #FFF
     text-align center
     min-height 610px
-    border-top 1px solid #999
+    border-top 1px solid #CCC
 
 .form-section
 
@@ -1070,6 +1147,9 @@ body
         margin-right 20px
         opacity .7
 
+        &:last-child
+            margin-right 0
+
         &--in
             sprite($inst_logo_f)
 
@@ -1107,3 +1187,370 @@ video
     width: 100%;
     height: 590px;
     object-fit: cover;
+
+.inner-header
+    min-height 65px
+    border-bottom 1px solid #CCC
+    position relative
+
+    // &:after
+    //     position absolute
+    //     content ''
+    //     width 24px
+    //     height 1px
+    //     background-color #FFF
+    //     right 0
+    //     bottom -1px
+
+    &__logo-wrapper
+        float left
+
+    &__right-part
+        float right
+
+    &__logo
+        sprite($header_logo_small)
+        display block
+
+    &__phone
+        display inline-block
+        vertical-align middle
+        font-size 24px
+        font-weight 300
+        color #999
+        margin-right 21px
+
+        &:hover
+            text-decoration none
+
+    &__submenu-link
+        display inline-block
+        vertical-align middle
+
+
+
+.c-hamburger
+    position relative
+    overflow hidden
+    margin: 0;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    font-size: 0;
+    text-indent: -9999px;
+    appearance: none;
+    box-shadow: none;
+    border-radius: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    background-color transparent
+
+.c-hamburger:focus
+    outline: none
+
+.c-hamburger span
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 4px;
+    right: 4px;
+    height: 2px;
+    background #FF0000
+
+.c-hamburger span::before,
+.c-hamburger span::after
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color #FF0000
+    content: "";
+
+.c-hamburger span::before
+    top: -6px;
+
+.c-hamburger span::after
+    bottom: -6px;
+
+.c-hamburger--htx span
+    transition: background 0s 0.3s;
+
+.c-hamburger--htx span::before,
+.c-hamburger--htx span::after
+    transition-duration: 0.3s, 0.3s;
+    transition-delay: 0.3s, 0s;
+
+.c-hamburger--htx span::before
+    transition-property: top, transform;
+
+.c-hamburger--htx span::after
+    transition-property: bottom, transform;
+
+.c-hamburger--htx.is-active span
+    background: none;
+
+.c-hamburger--htx.is-active span::before
+    top: 0;
+    transform: rotate(45deg)
+
+.c-hamburger--htx.is-active span::after
+    bottom: 0;
+    transform: rotate(-45deg)
+
+.c-hamburger--htx.is-active span::before,
+.c-hamburger--htx.is-active span::after
+    transition-delay: 0s, 0.3s;
+
+.breadcrumbs
+
+    &__content
+        padding-top 37px
+
+    &__item
+        display inline-block
+        vertical-align top
+        margin-right -.25em
+        padding-right 22px
+        font-size 14px
+        color #FF0000
+        font-weight 300
+        position relative
+
+        &:after
+            content ''
+            position absolute
+            top 3px
+            right 5px
+            sprite($breadcrumb_next)
+
+        &:last-child:after
+            display none
+
+.page-content
+    text-align center
+
+    &--last
+        margin-bottom 100px
+
+    &__title
+        font-size 36px
+        font-weight 100
+        color #999
+        border-bottom 1px solid #C2C2C2
+        display inline-block
+        padding-bottom 3px
+        margin-bottom 10px
+
+    &__text
+        text-align left
+        font-size 18px
+        font-weight 100
+        color #999
+
+        &--centered
+            text-align center
+
+        &--small
+            width 820px
+            margin 0 auto
+
+.tabs
+    overflow hidden
+    position relative
+    text-align center
+
+    &--small
+        width 980px
+        margin 0 auto
+
+    &__content
+        text-align left
+        min-height 300px
+        padding 35px 0 30px
+
+.tabs__head
+    display inline-block
+    margin-right 36px
+    line-height 1
+    padding 10px 0
+    width 220px
+    position relative
+    left 0
+    cursor pointer
+    text-align center
+    font-weight 100
+    font-size 26px
+    color #FF0000
+    background #FFF
+    border 1px solid #FF0000
+    border-radius 25px
+
+.tabs .tabs__head.tab-selected
+    z-index 3
+    cursor auto
+    color #FFF
+    background #FF0000
+
+.tabs dd
+    background #fff
+    display none
+    float right
+    width 100%
+    margin 50px 0 0 -100%
+    position relative
+    z-index 2
+
+.tabs dd.tab-selected
+    display block
+
+.rouble
+    display inline-block
+    sprite($rouble_sign)
+
+.price-table
+    border-collapse collapse
+    width 100%
+
+    &__head,
+    &__cell
+        text-align center
+        font-size 16px
+        font-weight 100
+
+    &__head
+        border-bottom 1px solid #FF0000
+        color #FF0000
+        padding 15px 0
+
+    &__cell
+        border-bottom 1px solid #999
+        color #999
+        padding 15px 0
+
+        &--first-column
+            text-align left
+            color #FF0000
+
+        &--last
+            border-bottom 0
+
+    &__number
+        font-size 18px
+
+.inner-form-section
+    border-top 1px solid transparent
+    border-bottom 1px solid transparent
+    transition all 1s ease
+    text-align center
+
+    &--grey
+        background #EBEBEB
+
+    &--border
+        background transparent
+        border-color #CCC
+
+.form-accordion section
+    display block
+    width 100%
+    max-height 75px
+    overflow hidden
+
+.form-accordion section .form-accordion__title
+    width 100%
+    padding 0
+    margin 0
+    height 49px
+    padding 13px 0
+    text-align center
+
+.form-accordion section .form-accordion__title a
+    display inline-block
+    width 340px
+    text-decoration none
+    line-height 1
+    padding 10px 0
+    cursor pointer
+    text-align center
+    font-weight 100
+    font-size 26px
+    color #FFF
+    background #FF0000
+    border 1px solid #FF0000
+    border-radius 25px
+
+.form-accordion section.selected
+    max-height 725px
+    background-color #FFF
+    padding-bottom 40px
+
+.form-accordion section.selected .form-accordion__title
+    display none
+
+.form-accordion section
+    transition all 1s ease
+
+.busy-sec
+    border-bottom 1px solid #CCC
+    margin-bottom 30px
+
+    &__content
+        padding 65px 0 25px
+        text-align center
+
+    &__item-container
+        padding 40px 0 0
+
+.busy-sec-item
+    display inline-block
+    vertical-align top
+    margin-right -.25em
+    margin-left 40px
+    font-weight 100
+    color #999
+    width 290px
+
+    &__title
+        font-size 18px
+        margin-bottom 10px
+
+    &__text
+        font-size 16px
+        line-height 1.5
+
+    &:nth-child(3n + 1)
+        margin-left 0
+
+    &__img-wrapper
+        display inline-block
+        position relative
+        height 87px
+        width 130px
+        margin-bottom 10px
+
+    &__img
+        position absolute
+        bottom 0
+        left 0
+        right 0
+        margin 0 auto
+
+    &__img--sec-lic
+        sprite($sec_lic)
+
+    &__img--sec-tal
+        sprite($sec_tal)
+
+    &__img--sec-pro
+        sprite($sec_pro)
+
+    &__img--sec-buh
+        sprite($sec_buh)
+
+    &__img--sec-vod
+        sprite($sec_vod)
+
+    &__img--sec-gra
+        sprite($sec_gra)

@@ -19,9 +19,15 @@ $(document).ready(function () {
 	}, function() {return true});
 
 	$('.js-nav-wrapper').on('mouseleave', function() {
-		if ($('.js-nav-submenu').is(':visible')) {
-			toggleSmth('.js-nav-submenu', 'up');
-		}
+		setTimeout(function() {
+			if ($('.js-nav-submenu').is(':visible')) {
+				if ($('.js-inner-nav-link').is(':visible')) {
+					$('.js-inner-nav-link').click();
+				} else {
+					toggleSmth('.js-nav-submenu', 'up');
+				}
+			}
+		}, 400);
 	});
 
 	$('.js-submenu-close').click(function(){
@@ -33,9 +39,15 @@ $(document).ready(function () {
 		$('html, body').animate({ scrollTop: 620 }, 1000);
 	});
 
+	/* Внутреннее субменю */
+
+	$('.js-inner-nav-link').click(function() {
+		toggleSmth('.js-nav-submenu', 'up');
+	});
+
 	/* Попап в хедере */
 
-	$('.header .js-popup-open').click(function() {
+	$('header .js-popup-open').click(function() {
 		toggleSmth('.js-header-form-wrapper', 'right', 600);
 	});
 
@@ -49,7 +61,7 @@ $(document).ready(function () {
 		});
 	}
 
-	$('.header .js-popup-close').click(function() {
+	$('header .js-popup-close').click(function() {
 		toggleSmth('.js-header-form-wrapper', 'right', 600);
 	});
 
@@ -243,5 +255,45 @@ $(document).ready(function () {
 
 		ymaps.ready(init);
 	}
+
+	var toggles = document.querySelectorAll(".c-hamburger");
+
+	for (var i = toggles.length - 1; i >= 0; i--) {
+		var toggle = toggles[i];
+		toggleHandler(toggle);
+	};
+
+	function toggleHandler(toggle) {
+		toggle.addEventListener( "click", function(e) {
+			e.preventDefault();
+			(this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
+		});
+	}
+
+	$('dl.tabs dt').click(function(){
+        $(this)
+            .siblings().removeClass('tab-selected').end()
+            .next('dd').andSelf().addClass('tab-selected');
+    });
+
+    var accAllow = true;
+
+    $('.accordion a').click(function(event) {
+        event.preventDefault();
+        if (accAllow) {
+            accAllow = false;
+            var parent = $(this).closest('section');
+            if (!parent.hasClass('selected')) {
+                $('.accordion section').removeClass('selected');
+                parent.addClass('selected');
+                $('.inner-form-section').addClass('inner-form-section--border')
+            } else {
+                parent.removeClass('selected');
+            }
+            setTimeout(function() {
+                accAllow = true;
+            }, 400);
+        }
+    });
 
 });
