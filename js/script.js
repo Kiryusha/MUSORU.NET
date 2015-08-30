@@ -19,6 +19,7 @@ $(document).ready(function () {
 	}, function() {return true});
 
 	$('.js-nav-wrapper').on('mouseleave', function() {
+		console.log('leave')
 		setTimeout(function() {
 			if ($('.js-nav-submenu').is(':visible')) {
 				if ($('.js-inner-nav-link').is(':visible')) {
