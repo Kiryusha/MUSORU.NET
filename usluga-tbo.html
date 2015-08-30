@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>GiftGuru</title>
+
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+        <link href="css/style.css" rel="stylesheet" />
+
+        <script src="js/jquery-1.11.3.min.js"></script>
+        <script src="js/jquery.form.min.js"></script>
+        <script src="js/jquery.maskedinput.min.js"></script>
+        <script src="js/jquery.hoverIntent.minified.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+        <script src="js/jquery.cycle2.min.js"></script>
+
+    </head>
+    <body>
+        <div class="page-wrapper page-wrapper--inner">
+            <div class="main main--no-footer">
+                <header class="inner-header">
+                    <div class="inner-header__content clearfix js-nav-wrapper">
+                        <a href="#" class="inner-header__logo-wrapper">
+                            <span class="inner-header__logo"></span>
+                        </a>
+                        <div class="inner-header__right-part">
+                            <a href="tel:+79859999089" class="inner-header__phone">
+                                8 985 9999 089
+                            </a>
+                            <button class="inner-header__submenu-link c-hamburger c-hamburger--htx js-inner-nav-link">
+                                <span>toggle menu</span>
+                            </button>
+                        </div>
+                        <div class="header-submenu header-submenu--inner js-nav-submenu">
+                            <div class="header-submenu__list-headings">
+                                <div class="header-submenu__list-heading">
+                                    Виды деятельности
+                                </div>
+                                <div class="header-submenu__list-heading">
+                                    О компании
+                                </div>
+                                <div class="header-submenu__list-heading">
+                                    Документы
+                                </div>
+                            </div>
+                            <ul class="header-submenu__list">
+                                <li class="header-submenu__item">
+                                    <a href="#" class="header-submenu__link">
+                                        Вывоз строительного мусора
+                                    </a>
+                                </li>
+                                <li class="header-submenu__item">
+                                    <a href="#" class="header-submenu__link">
+                                        Вывоз ТБО и промышленного мусора
+                                    </a>
+                                </li>
+                                <li class="header-submenu__item">
+                                    <a href="#" class="header-submenu__link">
+                                        Вывоз крупногабаритного мусора
+                                    </a>
+                                </li>
+                                <li class="header-submenu__item">
+                                    <a href="#" class="header-submenu__link">
+                                        Вывоз хлама и смешанного мусора
+                                    </a>
+                                </li>
+                                <li class="header-submenu__item">
+                                    <a href="#" class="header-submenu__link">
+                                        Вывоз грунта
+                                    </a>
+                                </li>
+                                <li class="header-submenu__item">
+                                    <a href="#" class="header-submenu__link">
+                                        Вывоз снега
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="header-submenu__list">
+                                <li class="header-submenu__item">
+                                    <a href="#" class="header-submenu__link">
+                                        История компании
+                                    </a>
+                                </li>
+                                <li class="header-submenu__item">
+                                    <a href="#" class="header-submenu__link">
+                                        Миссия и цености
+                                    </a>
+                                </li>
+                                <li class="header-submenu__item">
+                                    <a href="#" class="header-submenu__link">
+                                        Парк техники
+                                    </a>
+                                </li>
+                                <li class="header-submenu__item">
+                                    <a href="#" class="header-submenu__link">
+                                        FAQ
+                                    </a>
+                                </li>
+                                <li class="header-submenu__item">
+                                    <a href="#" class="header-submenu__link">
+                                        Контакты
+                                    </a>
+                                </li>
+                                <li class="header-submenu__item">
+                                    <a href="#" class="header-submenu__link">
+                                        Карта сайта
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="header-submenu__list">
+                                <li class="header-submenu__item">
+                                    <a href="#" class="header-submenu__link">
+                                        Таблица плотности<br>
+                                        твердых материалов
+                                    </a>
+                                </li>
+                                <li class="header-submenu__item">
+                                    <a href="#" class="header-submenu__link">
+                                        Поставщикам
+                                    </a>
+                                </li>
+                                <li class="header-submenu__item">
+                                    <a href="#" class="header-submenu__link header-submenu__link--download">
+                                        Договор на вывоз мусора
+                                    </a>
+                                </li>
+                                <li class="header-submenu__item">
+                                    <a href="#" class="header-submenu__link">
+                                        Поставщикам
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="header-submenu__soc-block">
+                                <a href="#" class="header__lang header__lang--inner">
+                                    English version:
+                                </a><br>
+                                <a href="#" class="header__mail-link header__mail-link--inner js-popup-open">
+                                    Написать нам:
+                                </a>
+                                <div class="header__social-group">
+                                    <div class="header__social-title header__social-title--inner">
+                                        Компания в деловых соц. сетях:
+                                    </div>
+                                    <div class="footer__social-list">
+                                        <a href="#" class="footer__social-item footer__social-item--in"></a>
+                                        <a href="#" class="footer__social-item footer__social-item--gg"></a>
+                                        <a href="#" class="footer__social-item footer__social-item--tw"></a>
+                                        <a href="#" class="footer__social-item footer__social-item--fb"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-form-wrapper js-header-form-wrapper">
+                        <span class="header-form-wrapper__close js-popup-close"></span>
+                        <form action="" class="fancy-form js-form" method="POST">
+                            <div class="fancy-form__content js-form-content">
+                                <div class="fancy-form__title">
+                                    Обратная связь
+                                </div>
+                                <div class="fancy-form__field js-fancy-field">
+                                    <label class="fancy-form__label" for="header-input"> Введите Имя</label>
+                                    <input class="fancy-form__input" id="header-input" required="required" type="text" autocomplete="off">
+                                </div>
+                                <div class="fancy-form__field js-fancy-field">
+                                    <label class="fancy-form__label" for="header-phone"> Введите номер телефона</label>
+                                    <input class="fancy-form__input js-phone" id="header-phone" required="required" type="text" autocomplete="off">
+                                </div>
+                                <div class="fancy-form__field js-fancy-field">
+                                    <label class="fancy-form__label" for="header-email"> Электронная почта</label>
+                                    <input class="fancy-form__input" id="header-email" required="required" type="email" autocomplete="off">
+                                </div>
+                                <div class="fancy-form__field js-fancy-field">
+                                    <label class="fancy-form__label" for="header-mess"> Ваш комментарий</label>
+                                    <input class="fancy-form__input" id="header-mess" required="required" type="text" autocomplete="off">
+                                </div>
+                                <input type="submit" class="fancy-form__submit button-fill" value="Отправить запрос">
+                                <div class="fancy-form__info">
+                                    или пишите на<br>
+                                    <a href="mailto:biz@musory-net.ru" class="fancy-form__info-mail">biz@musory-net.ru</a>
+                                </div>
+                            </div>
+                            <div class="fancy-form__success js-form-success">
+                                <div class="fancy-form__success-text">
+                                    Благодарим Вас за оформление<br>
+                                    заявки в нашей компании!
+                                </div>
+                                <div class="fancy-form__success-img"></div>
+                            </div>
+                        </form>
+                    </div>
+                </header>
+                <section class="breadcrumbs">
+                    <div class="breadcrumbs__content">
+                        <div class="breadcrumbs__item">
+                            Главная страница
+                        </div>
+                        <div class="breadcrumbs__item">
+                            Вывоз ТБО и промышленного мусора
+                        </div>
+                    </div>
+                </section>
+                <section class="page-content">
+                    <h1 class="page-content__title">
+                        Вывоз ТБО и промышленного мусора
+                    </h1>
+                    <p class="page-content__text">
+                        Какой же мусор может быть отнесен к ТБО или твердым бытовым отходам?
+                    </p>
+                    <p class="page-content__text">
+                        Мусорные мешки, которые накапливаются в результате жизнедеятельности индивидуума, как правило, состоят из мелкого бытового мусора, остатков пищи представляет собой самых распространенный тип. К этой же категории можно отнести и пластиковые и стеклянные бутылки. Домашние хозяйства часто избавляются от пластиковых изделий крупных размеров. Картонные коробки, которые накапливаются в большом количестве также подлежат утилизации. Макулатура и любые материалы состоящие из бумаги также относятся к этому типу мусора.
+                    </p>
+                    <img src="img/tbo-pic-1.jpg" alt="" class="page-content__img-wide">
+                    <p class="page-content__text">
+                        Почему же утилизация твердых бытовых отходов - это важная тема и их правильная утилизация должна являться повесткой для каждого человека, а не только для компаний.<br>
+                        Человечество ежедневно оставляет после себя огромное количество бытовых отходов, которые является побочным эффектом нашей жизнедеятельности. Объемы ТБО, в настоящее время, растут с геометрической прогрессией.
+                    </p>
+                    <p class="page-content__text">
+                        Наша компания занимается вывозом и утилизацией твердых бытовых отходов.<br>
+                        На первом этапе мы принимаем все Ваши условия (объемы вывоза, частота вывоза, районы), далее мы осмечиваем все усилия, которые необходимо применить для достижения поставленных задач. На последнем этапе мы выстаиваем стратегию, в которую входит разметка календаря вывоза (часы, районы, дни и частоту). Далее мы заключаем с Вами договор на вывоз мусора. Мы размещаем мусорные контейнеры на указанной территории. Специально обученный эксперт производит анализ состава мусора на месте с последующей его погрузкой нашим специалистом или Вашими рабочими.
+                    </p>
+                    <p class="page-content__text">
+                        При выборе подрядчика для такого типа работ наша корпорация обладает рядом очевидных конкурентных преимуществ:
+                    </p>
+                    <p class="page-content__text">
+                        гибкая политика работы компании, при которой самые изощренные условия являются приемлемыми для нас;
+                    </p>
+                    <p class="page-content__text">
+                        клиентский сервис высшего уровня. Наши аккаунт-менеджеры готовы предоставлять Вам отчеты о текущем статусе работ и по факту проделанной работы;
+                    </p>
+                    <p class="page-content__text">
+                        специально обученные эксперты, которые прошли заграничные стажировке и полностью компетентны в вопросах утилизации отходов;
+                    </p>
+                    <p class="page-content__text">
+                        парк современной техники, которая готова 24 часа обслуживать Ваши заказы. Наши погрузочные машины оснащены последними технологическими устройствами, которые способны эффективно осуществить погрузочно-транспортировочные работы.
+                    </p>
+                    <p class="page-content__text">
+                        Почему не стоит накапливать неумеренное количество ТБО и мелких бытовых отходов?<br>
+                        Мусор, который хранится в ненадлежащем месте со временем начинает декомпозироваться, гнить, выделять токсины, распадаться на опасные химические соединения и попадать в воздух, почву, грунтовые воды. Мы едим овощи и фрукты выращенные в этой земле, мы пьем эту воду, мы дышим этим воздухом. Если мы не будет соблюдать простые правила социальной ответственности (social responsibility) и не следовать принципам устойчивого развития (sustainable development), то мы разрушим будущее следующих поколений. Если эти предложения что-то значат для Вас, то не сбрасывайте бытовой мусор в лесу, посреди улицы или на дачных помойках. Доверьте работу по вывозу и утилизации нашей корпорации.
+                    </p>
+                    <p class="page-content__text">
+                        Отдельные замечания и комментарии касательно вывоза ТБО и промышленных отходов.
+                    </p>
+                    <p class="page-content__text">
+                        Мы готовы заключить контракт с Вами, невзирая на юридический статус (Вы можете быть как индивидуальным предпринимателем, мелким бизнесом, физическим лицом или же крупной корпорацией).
+                    </p>
+                    <p class="page-content__text">
+                        Наша организация предлагает гибкие условия коллаборации, предусматривая как единичные вывозы ТБО с Вашей территории, так и вывоз с заранее установленной периодичностью.
+                    </p>
+                    <p class="page-content__text">
+                        Место вывоза мусора (отходов). Мы производим вывоз как из торговых центров, так и из школ, детских садов, лагерей, пансионатов, театров, спортивных комплексов и административно-деловых комплексов.
+                    </p>
+                    <p class="page-content__text">
+                        Наша компания преследует транспарентность как современный инструмент здоровой конкуренции. У нашей компании заключены официальные договора с всеми Подмосковными свалками (Тимохово, Торбеево, Кучино) не только на свал мусора, а также на его правильную технологическую утилизацию, которая соответствует всем стандартам экологической и санитарной безопасности. Мы проводим экспертизы добросовестности работы свалок на предмет утилизации Вашего мусора и являемся активными пропонентами политики честного бизнеса.
+                    </p>
+                    <p class="page-content__text">
+                        Вывоз мусора без задержек - это в первую очередь ответственное отношение бизнеса к окружающей среде. Очищенная от мусора территория служит показателем отношения бизнеса к остальным. Если Вы хотите сохранить бизнес имидж и поддержать стандарты корпоративной социальной ответственности, то настоятельно просим Вас своевременно обращаться к нашей компании за услугой вывоза ТБО и промышленного мусора.
+                    </p>
+                    <h2 class="page-content__subtitle">
+                        Промышленные отходы
+                    </h2>
+                    <p class="page-content__text">
+                        Поговорим о вывозе промышленного мусора и всеми релевантными вопросами, которые возникают у компании, когда встает вопрос утилизации отходов такого типа.
+                    </p>
+                    <p class="page-content__text">
+                        Как и в прошлых профессиональных статьях, мы начнем с категоризации типов промышленного мусора. Мусор такого типа - это прежде всего предмет повышенной опасности.
+                    </p>
+                    <p class="page-content__text">
+                        Промышленные отходы делятся на несколько категорий в зависимости от степени опасности (токсичности, взрывоопасности).  Также такие отходы могут быть перерабатываемыми с последующим использованием в других целях или же не подлежать дальнейшим переработкам, в принципе. Физического состояние такого мусора также может разнится и быть как твердым и так и ликвидным (жидкое физическое состояние).<br>
+                        Наша компания специализируется на вывозе твердых промышленных отходов
+                    </p>
+                    <img src="img/tbo-pic-2.jpg" alt="" class="page-content__img-wide">
+                    <p class="page-content__text">
+                        Далее мы постараемся дать Вам доступное для понимания определение промышленных отходов. Это такой тип отходов, которые образуются в результате любой промышленной деятельности. Это могут быть оставшиеся материалы, которые уже не несут полезных свойств и не представляют коммерческого интереса для компаний.<br>
+                        Поскольку темпы развития промышленности носят прогрессивны характер (производственные мощности удваиваются ежегодно), объёмы промышленных отходов растут прямо пропорционально с наращиванием производственных мощностей.
+                    </p>
+                    <p class="page-content__text">
+                        Ярым примером промышленных отходов является мусор образовавшийся после строительства зданий или сноса оных. В частности, это деревянные конструкции, сломанные бетонные блоки, бракованные строительные материалы, коробки и упаковки от строительных материалов, стальные и металлические детали, остатки демонтажа и сноса.
+                    </p>
+                    <p class="page-content__text">
+                        Эта информация предоставлена для образовательных и ознакомительных целей.<br>
+                        Все дополнительные вопросы касательно утилизации промышленного мусора и ТБО Вы можете получить, проконсультировавшись с нашим экспертом по утилизации и экспертизе мусора.
+                    </p>
+                </section>
+                <section class="inner-form-section">
+                    <div class="inner-form-section__content">
+                        <article class="form-accordion accordion">
+                            <section id="acc1">
+                                <div class="form-accordion__title">
+                                    <a href="#acc1">
+                                        Заказать вывоз ТБО
+                                    </a>
+                                </div>
+                                <div class="form-section js-form">
+                                    <h2 class="clients-section__title section-title">
+                                        Заказать вывоз ТБО
+                                    </h2>
+                                    <form class="form-section__form fancy-form" action="" method="POST">
+                                        <div class="fancy-form__content js-form-content">
+                                            <div class="fancy-form__field js-fancy-field">
+                                                <label class="fancy-form__label" for="step-form-input"> Введите Имя</label>
+                                                <input class="fancy-form__input" id="step-form-input" required="required" type="text" autocomplete="off">
+                                            </div>
+                                            <div class="fancy-form__field js-fancy-field">
+                                                <label class="fancy-form__label" for="step-form-phone"> Введите номер телефона</label>
+                                                <input class="fancy-form__input js-phone" id="step-form-phone" required="required" type="text" autocomplete="off">
+                                            </div>
+                                            <div class="fancy-form__field js-fancy-field">
+                                                <label class="fancy-form__label" for="step-form-email"> Электронная почта</label>
+                                                <input class="fancy-form__input" id="step-form-email" required="required" type="email" autocomplete="off">
+                                            </div>
+                                            <div class="fancy-form__field js-fancy-field">
+                                                <label class="fancy-form__label" for="step-form-mess"> Ваш комментарий</label>
+                                                <input class="fancy-form__input" id="step-form-mess" required="required" type="text" autocomplete="off">
+                                            </div>
+                                            <input type="submit" class="fancy-form__submit button-fill" value="Отправить заявку">
+                                        </div>
+                                        <div class="fancy-form__success fancy-form__success--inner js-form-success">
+                                            <div class="fancy-form__success-text fancy-form__success-text--step fancy-form__success-text--inner">
+                                                Благодарим Вас за оформление<br>
+                                                заявки в нашей компании!
+                                            </div>
+                                            <div class="fancy-form__success-img fancy-form__success-img--step">
+                                        </div>
+                                    </form>
+                                </div>
+                            </section>
+                        </article>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <script src="js/script.js"></script>
+    </body>
+</html>
