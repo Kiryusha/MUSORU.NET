@@ -46,7 +46,8 @@ body
 .inner-form-section,
 .busy-sec,
 .history-bg,
-.faq-grid-wrapper
+.faq-grid-wrapper,
+.detail-section-wrapper
     // width 100%
     // min-width 1200px
     max-width 1280px
@@ -62,7 +63,8 @@ body
 .tabs-section__content,
 .inner-form-section__content,
 .busy-sec__content,
-.faq-grid
+.faq-grid,
+.detail-section
     position relative
     z-index 100
     width 1060px
@@ -1056,6 +1058,12 @@ body
     width 1080px
     margin 0 auto
 
+    &--detail
+        position absolute
+        top -5px
+        right 0
+        width 300px
+
     &__title
         margin-top 60px
 
@@ -1137,6 +1145,11 @@ body
 
 .article-item:nth-child(3n + 1)
     margin-left 0
+
+.articles-section--detail
+
+    .article-item
+        margin 0 auto 60px
 
 .form-section-wrapper
     background-color #FFF
@@ -1826,3 +1839,17 @@ video
 
         &--last
             sprite($breadcrumb_next)
+
+
+.detail-section
+    position relative
+
+    &__content
+        width 700px
+
+.page-content__title--small
+    font-size 30px
+
+.page-content__title--small-red
+    font-size 30px
+    border-color #FF0000

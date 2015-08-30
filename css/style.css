@@ -95,7 +95,8 @@ body {
 .inner-form-section,
 .busy-sec,
 .history-bg,
-.faq-grid-wrapper {
+.faq-grid-wrapper,
+.detail-section-wrapper {
   max-width: 1280px;
   min-width: 1200px;
   margin: 0 auto;
@@ -108,7 +109,8 @@ body {
 .tabs-section__content,
 .inner-form-section__content,
 .busy-sec__content,
-.faq-grid {
+.faq-grid,
+.detail-section {
   position: relative;
   z-index: 100;
   width: 1060px;
@@ -1214,6 +1216,12 @@ body {
   width: 1080px;
   margin: 0 auto;
 }
+.articles-section--detail {
+  position: absolute;
+  top: -5px;
+  right: 0;
+  width: 300px;
+}
 .articles-section__title {
   margin-top: 60px;
 }
@@ -1297,6 +1305,9 @@ body {
 }
 .article-item:nth-child(3n + 1) {
   margin-left: 0;
+}
+.articles-section--detail .article-item {
+  margin: 0 auto 60px;
 }
 .form-section-wrapper {
   background-color: #fff;
@@ -2025,4 +2036,17 @@ video {
   background-position: -491px -102px;
   width: 9px;
   height: 12px;
+}
+.detail-section {
+  position: relative;
+}
+.detail-section__content {
+  width: 700px;
+}
+.page-content__title--small {
+  font-size: 30px;
+}
+.page-content__title--small-red {
+  font-size: 30px;
+  border-color: #f00;
 }
