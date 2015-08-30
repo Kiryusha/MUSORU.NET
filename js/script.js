@@ -297,4 +297,10 @@ $(document).ready(function () {
         }
     });
 
+    $('.grid').masonry({
+		itemSelector: '.grid__item',
+		columnWidth: 300,
+		gutter: 60
+	});
+
 });

@@ -2,6 +2,7 @@
 @require 'jquery.fancybox.css'
 @require 'sprites'
 @require 'common'
+@require 'fonts'
 
 html,
 body
@@ -44,7 +45,8 @@ body
 .tabs-section,
 .inner-form-section,
 .busy-sec,
-.history-bg
+.history-bg,
+.faq-grid-wrapper
     // width 100%
     // min-width 1200px
     max-width 1280px
@@ -59,7 +61,8 @@ body
 .breadcrumbs__content,
 .tabs-section__content,
 .inner-form-section__content,
-.busy-sec__content
+.busy-sec__content,
+.faq-grid
     position relative
     z-index 100
     width 1060px
@@ -1752,3 +1755,35 @@ video
 
 .cycle-pager span
     cursor: pointer
+
+.faq-grid
+    margin-top -40px
+
+    &__number
+        font-family 'lato', sans-serif
+        font-size 12px
+        font-weight bold
+        color #FFF
+        background-color #FF0000
+        width 92px
+        text-align center
+        padding 3px 0
+        margin-bottom 10px
+
+    &__item
+        width 300px
+        margin-bottom 75px
+
+    &__title
+        font-size 18px
+        font-weight 300
+        color #666
+
+    &__text
+        font-size 14px
+        font-weight 300
+        color #999
+
+    &__link
+        color #FF0000
+        text-decoration underline
