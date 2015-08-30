@@ -1532,6 +1532,14 @@ video {
   padding-bottom: 3px;
   margin-bottom: 20px;
 }
+.page-content__subtitle {
+  text-align: left;
+  font-size: 24px;
+  font-weight: 100;
+  color: #999;
+  display: block;
+  margin: 40px 0;
+}
 .page-content__text {
   text-align: left;
   font-size: 18px;
@@ -1626,6 +1634,10 @@ video {
   border-collapse: collapse;
   width: 100%;
 }
+.price-table--sm {
+  max-width: 600px;
+  margin: 0 auto;
+}
 .price-table__head,
 .price-table__cell {
   text-align: center;
@@ -1651,6 +1663,20 @@ video {
 }
 .price-table__number {
   font-size: 18px;
+}
+.price-table--sm {
+  margin-bottom: 55px;
+}
+.price-table--sm .price-table__cell {
+  color: #999;
+  padding: 15px 10px;
+  font-size: 18px;
+}
+.price-table--sm .price-table__head {
+  border-color: #999;
+  color: #999;
+  font-size: 14px;
+  padding: 10px 0;
 }
 .inner-form-section {
   border-top: 1px solid transparent;
