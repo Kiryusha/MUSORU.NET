@@ -221,9 +221,9 @@ if ($('#map').length) {
         var data = $(event.target).closest('.step-district__item').attr('data-id');
         var line = $( '.dist-line[data-id=' + data + ']' )
         if (line.css('background-color') == 'rgba(0, 0, 0, 0)') {
-            line.stop().animate({'background-color' : 'rgba(0, 0, 0)'}, 200);
+            line.stop().animate({'background-color' : 'rgba(238, 238, 238)'}, 200);
         } else {
-            line.stop().animate({'background-color' : 'rgba(0, 0, 0, 0)'}, 200);
+            line.stop().animate({'background-color' : 'rgba(238, 238, 238, 0)'}, 200);
         }
     });
 
@@ -251,24 +251,24 @@ for(var regionName in regions) {
         region[0].addEventListener("mouseover", function() {
             var data = region.data("name");
             region.animate(hoverStyle, animationSpeed);
-            $( '.dist-line[data-id=' + data + ']' ).stop().animate({'background-color' : '#000'}, 200);
+            $( '.dist-line[data-id=' + data + ']' ).stop().animate({'background-color' : '#EEE'}, 200);
         }, true);
 
         region[0].addEventListener("click", function() {
             var data = region.data("name");
-            if (region.attrs.fill == '#FF0000') {
+            if (region.attrs.fill == '#FF4D4D') {
                 region.animate({fill: '#FFF'}, animationSpeed);
                 $( '[data-id=' + data + ']' ).remove();
                 reconnect();
                 checkDistAmount();
             } else {
                 if (!$( '[data-id=' + data + ']' ).is(':visible')) {
-                    region.animate({fill: '#FF0000'}, animationSpeed);
+                    region.animate({fill: '#FF4D4D'}, animationSpeed);
                     $('.js-district-list').append('<div class="step-district__item" data-id="'+ data +'"><span>' + data + '<span class="step-district__item-close js-dist-close"></span></span><input type="hidden" value="' + data + '" name="DISTRICTS[]"></div>');
 
                     var div1 = region
                     var div2 = document.querySelector('div[data-id=' + data + ']');
-                    connect(div1, div2, "#000", 1);
+                    connect(div1, div2, "#EEE", 1);
                     checkDistAmount();
                 }
             }

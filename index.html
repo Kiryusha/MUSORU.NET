@@ -50,12 +50,12 @@
 												Документы
 											</a>
 										</li>
-										<li class="header__nav-item">
+										<li class="header__nav-item js-nav-out">
 											<a href="#" class="header__nav-link">
 												Стоимость услуг
 											</a>
 										</li>
-										<li class="header__nav-item">
+										<li class="header__nav-item js-nav-out">
 											<a href="#" class="header__nav-link">
 												Статьи
 											</a>
@@ -206,7 +206,7 @@
 								</div>
 								<div class="fancy-form__field js-fancy-field">
 									<label class="fancy-form__label" for="header-mess"> Ваш комментарий</label>
-									<input class="fancy-form__input" id="header-mess" required="required" type="text" autocomplete="off">
+									<textarea class="fancy-form__input" id="header-mess" required="required" type="text" autocomplete="off"></textarea>
 								</div>
 								<input type="submit" class="fancy-form__submit button-fill" value="Отправить запрос">
 								<div class="fancy-form__info">
@@ -378,7 +378,7 @@
 											</div>
 										</div>
 										<span class="step-form-step__prev button-fill js-prev-step">
-											Предыдущий шаг
+											Назад
 										</span>
 										<span class="step-form-step__next button-fill js-next-step button-disabled">
 											Следующий шаг
@@ -400,11 +400,17 @@
 												<div class="step-cont-type__title">
 													8м<sup>3</sup>
 												</div>
+												<div class="step-cont-type__success js-trash-success">
+													<div class="step-cont-type__success-img absl-cntr"></div>
+												</div>
 											</div>
 											<div class="step-cont-type js-cont-type">
 												<img src="img/cont20m.png" alt="" class="step-cont-type__img">
 												<div class="step-cont-type__title">
 													20м<sup>3</sup>
+												</div>
+												<div class="step-cont-type__success js-trash-success">
+													<div class="step-cont-type__success-img absl-cntr"></div>
 												</div>
 											</div>
 											<div class="step-cont-type js-cont-type">
@@ -412,11 +418,14 @@
 												<div class="step-cont-type__title">
 													27м<sup>3</sup>
 												</div>
+												<div class="step-cont-type__success js-trash-success">
+													<div class="step-cont-type__success-img absl-cntr"></div>
+												</div>
 											</div>
 										</div>
 
 										<div class="cont-type-slider">
-											<div class="cont-type-slider__item hidden js-cont-slide">
+											<div class="cont-type-slider__item js-cont-slide">
 												<div class="cont-type-slider__img-wrapper">
 													<img src="img/cont8m.png" alt="" class="cont-type-slider__img">
 												</div>
@@ -428,7 +437,8 @@
 														<div class="cont-type-slider__input-wrapper-text">
 															Количество контейнеров:
 														</div>
-														<input type="text" class="cont-type-slider__input" name="Контейнеры 8м3">
+														<input type="checkbox" class="cont-type-slider__checkbox hidden" name="CONT-8M">
+														<input type="text" class="cont-type-slider__input" name="CONT-AMOUNT">
 													</div>
 												</div>
 											</div>
@@ -438,13 +448,14 @@
 												</div>
 												<div class="cont-type-slider__text-block">
 													<div class="cont-type-slider__text">
-														Контейнер емкостью 8 м3 используется для сбора большого количества мусора. Есть смысл устанавливать именно такие контейнеры на мусорных площадках
+														Контейнер объемом 20 м3 используется для разных типов мусора при погрузке не превышающего 10 тонн (в расчете на один контейнер).
 													</div>
 													<div class="cont-type-slider__input-wrapper">
 														<div class="cont-type-slider__input-wrapper-text">
 															Количество контейнеров:
 														</div>
-														<input type="text" class="cont-type-slider__input" name="Контейнеры 20м3">
+														<input type="checkbox" class="cont-type-slider__checkbox hidden" name="CONT-20M">
+														<input type="text" class="cont-type-slider__input" name="CONT-AMOUNT">
 													</div>
 												</div>
 											</div>
@@ -454,19 +465,20 @@
 												</div>
 												<div class="cont-type-slider__text-block">
 													<div class="cont-type-slider__text">
-														Контейнер емкостью 8 м3 используется для сбора большого количества мусора. Есть смысл устанавливать именно такие контейнеры на мусорных площадках
+														Контейнер объемом 27 м3 используется для объемного и легкого мусора, такого как КГМ доски, спил деревьев.
 													</div>
 													<div class="cont-type-slider__input-wrapper">
 														<div class="cont-type-slider__input-wrapper-text">
 															Количество контейнеров:
 														</div>
-														<input type="text" class="cont-type-slider__input" name="Контейнеры 27м3">
+														<input type="checkbox" class="cont-type-slider__checkbox hidden" name="CONT-27M">
+														<input type="text" class="cont-type-slider__input" name="CONT-AMOUNT">
 													</div>
 												</div>
 											</div>
 										</div>
 										<span class="step-form-step__prev button-fill js-prev-step">
-											Предыдущий шаг
+											Назад
 										</span>
 										<span class="step-form-step__next button-fill js-next-step button-disabled">
 											Следующий шаг
@@ -501,7 +513,7 @@
 												</div>
 												<div class="fancy-form__field js-fancy-field">
 													<label class="fancy-form__label" for="step-form-mess"> Ваш комментарий</label>
-													<input class="fancy-form__input" id="step-form-mess" required="required" type="text" autocomplete="off">
+													<textarea class="fancy-form__input" id="header-mess" required="required" type="text" autocomplete="off"></textarea>
 												</div>
 												<input type="submit" class="fancy-form__submit button-fill" value="Отправить заявку">
 												<div class="fancy-form__info">
@@ -518,8 +530,8 @@
 											<div class="fancy-form__success-img fancy-form__success-img--step">
 										</div>
 						        	</div>
-									<span class="step-form-step__prev button-fill js-prev-step">
-										Предыдущий шаг
+									<span class="step-form-step__prev step-form-step__prev--last button-fill js-prev-step">
+										Назад
 									</span>
 								</div>
 
@@ -633,38 +645,40 @@
 							Нам доверяют
 						</h2>
 						<div class="client-wrapper">
-							<a class="client-item" href="#" title="">
-								<span class="center-helper"></span>
-								<img class="client-img" src="img/rjd-logo.png" alt="">
-							</a>
-							<a class="client-item" href="#" title="">
-								<span class="center-helper"></span>
-								<img class="client-img" src="img/mosp-logo.png" alt="">
-							</a>
-							<a class="client-item" href="#" title="">
-								<span class="center-helper"></span>
-								<img class="client-img" src="img/ati-logo.png" alt="">
-							</a>
-							<a class="client-item" href="#" title="">
-								<span class="center-helper"></span>
-								<img class="client-img" src="img/kit-logo.png" alt="">
-							</a>
-							<a class="client-item" href="#" title="">
-								<span class="center-helper"></span>
-								<img class="client-img" src="img/stra-logo.png" alt="">
-							</a>
-							<a class="client-item" href="#" title="">
-								<span class="center-helper"></span>
-								<img class="client-img" src="img/krost-logo.png" alt="">
-							</a>
-							<a class="client-item" href="#" title="">
-								<span class="center-helper"></span>
-								<img class="client-img" src="img/mon-logo.png" alt="">
-							</a>
-							<a class="client-item" href="#" title="">
-								<span class="center-helper"></span>
-								<img class="client-img" src="img/td-logo.png" alt="">
-							</a>
+							<div class="client-wrapper__container clearfix">
+								<a class="client-item" href="#" title="">
+									<span class="center-helper"></span>
+									<img class="client-img" src="img/rjd-logo.png" alt="">
+								</a>
+								<a class="client-item" href="#" title="">
+									<span class="center-helper"></span>
+									<img class="client-img" src="img/mosp-logo.png" alt="">
+								</a>
+								<a class="client-item" href="#" title="">
+									<span class="center-helper"></span>
+									<img class="client-img" src="img/ati-logo.png" alt="">
+								</a>
+								<a class="client-item" href="#" title="">
+									<span class="center-helper"></span>
+									<img class="client-img" src="img/kit-logo.png" alt="">
+								</a>
+								<a class="client-item" href="#" title="">
+									<span class="center-helper"></span>
+									<img class="client-img" src="img/stra-logo.png" alt="">
+								</a>
+								<a class="client-item" href="#" title="">
+									<span class="center-helper"></span>
+									<img class="client-img" src="img/krost-logo.png" alt="">
+								</a>
+								<a class="client-item" href="#" title="">
+									<span class="center-helper"></span>
+									<img class="client-img" src="img/mon-logo.png" alt="">
+								</a>
+								<a class="client-item" href="#" title="">
+									<span class="center-helper"></span>
+									<img class="client-img" src="img/td-logo.png" alt="">
+								</a>
+							</div>
 						</div>
 					</div>
 				</section>
@@ -768,7 +782,7 @@
 						<h2 class="clients-section__title section-title">
 							Обратная связь
 						</h2>
-						<form class="form-section__form fancy-form" action="" method="POST">
+						<form class="form-section__form fancy-form js-form" action="" method="POST">
 							<div class="fancy-form__content js-form-content">
 								<div class="fancy-form__subtitle">
 									Свяжитесь с нами и получите бесплатную оценку стоимости вывоза и утилизации мусора
@@ -787,7 +801,7 @@
 								</div>
 								<div class="fancy-form__field js-fancy-field">
 									<label class="fancy-form__label" for="step-form-mess"> Ваш комментарий</label>
-									<input class="fancy-form__input" id="step-form-mess" required="required" type="text" autocomplete="off">
+									<textarea class="fancy-form__input" id="header-mess" required="required" type="text" autocomplete="off"></textarea>
 								</div>
 								<input type="submit" class="fancy-form__submit button-fill" value="Отправить заявку">
 								<div class="fancy-form__info">

@@ -19,7 +19,14 @@ $(document).ready(function () {
 	}, function() {return true});
 
 	$('.js-nav-wrapper').on('mouseleave', function() {
-		console.log('leave')
+		closeSubmenu();
+	});
+
+	$('.js-nav-out').on('mouseenter', function() {
+		closeSubmenu();
+	});
+
+	function closeSubmenu() {
 		setTimeout(function() {
 			if ($('.js-nav-submenu').is(':visible')) {
 				if ($('.js-inner-nav-link').is(':visible')) {
@@ -29,7 +36,7 @@ $(document).ready(function () {
 				}
 			}
 		}, 400);
-	});
+	}
 
 	$('.js-submenu-close').click(function(){
 		toggleSmth('.js-nav-submenu', 'up');
@@ -221,12 +228,18 @@ $(document).ready(function () {
 	/* Кол-во контейнеров */
 
 	$('.js-cont-type').click(function() {
-		var parentStep = $(this).closest('.js-single-step')
+		var parentStep = $(this).closest('.js-single-step');
 		var index = $(this).index();
 		var thisSlide = $('.js-cont-slide').eq(index);
+		$('[type="checkbox"]', $('.js-cont-slide')).attr("checked", false);
+		$('[type="checkbox"]', thisSlide).attr("checked", true);
+		$('input', thisSlide).focus();
+		$('.js-cont-type').removeClass('step-cont-type--active');
+		$(this).addClass('step-cont-type--active');
 		if (!$('.js-cont-slide').eq(index).is(':visible')) {
-			$('.js-cont-slide').hide();
+			$('.js-cont-slide').not(this).hide();
 			thisSlide.fadeIn();
+			$('input', thisSlide).focus();
 		}
 		$('.js-next-step', parentStep).removeClass('button-disabled');
 	});
@@ -297,10 +310,12 @@ $(document).ready(function () {
         }
     });
 
-    $('.grid').masonry({
-		itemSelector: '.grid__item',
-		columnWidth: 300,
-		gutter: 60
-	});
+    if ($('.grid').length) {
+	    $('.grid').masonry({
+			itemSelector: '.grid__item',
+			columnWidth: 300,
+			gutter: 60
+		});
+	}
 
 });

@@ -125,14 +125,20 @@ body
         list-style none
         margin 0
         padding 0
+        display inline-block
+
+    &__nav-list + &__nav-list
+        margin-left 50px
 
     &__nav-item
         display inline-block
-        padding 25px 0 15px
+        padding 35px 0 0
         margin-right -.25em
+        height 55px
+        margin-bottom -2px
 
     &__nav-item + &__nav-item
-        margin-left 50px
+        padding-left 50px
 
     &__nav-link
         display inline-block
@@ -163,6 +169,7 @@ body
         font-size 24px
         color #FFF
         margin-bottom 5px
+        font-weight 100
 
         &:hover
             text-decoration none
@@ -175,6 +182,7 @@ body
         width 120px
         color #FFF
         margin-bottom 5px
+        font-weight 100
 
         &--inner
             font-size 11px
@@ -491,13 +499,10 @@ body
         font-size 0.75rem
         line-height 1rem
         color rgba(#FFF, .8)
-        font-weight 400
+        font-weight 100
         transform translateY(1.5rem) scale(1.2)
         transition transform 0.3s
         transform-origin: 0 50%
-
-    .is-focused &__label
-        color #FF0000
 
     .has-label &__label
         transform translateY(0) scale(0.85)
@@ -515,6 +520,8 @@ body
         -webkit-appearance none
         outline none
         color rgba(#FFF, .8)
+        font-weight 100
+        resize vertical
 
     &__submit
         margin-top 40px
@@ -568,8 +575,6 @@ body
             margin 40px auto 0
             sprite($thank_you_red)
 
-
-
 /* Блок онлайн заказа */
 
 .step-form-wrapper
@@ -583,15 +588,7 @@ body
     font-size 36px
     color #999
     position relative
-
-    &:after
-        position absolute
-        content ''
-        bottom 0
-        left 15px
-        right 15px
-        height 1px
-        background rgba(#999, .8)
+    border-bottom 1px solid #E0E0E0
 
 .step-form
     position relative
@@ -659,7 +656,7 @@ body
 
 .step-form-step
     min-height 510px
-    border-bottom 1px solid #999
+    border-bottom 1px solid #ССС
     color #999
 
     &__title
@@ -688,13 +685,23 @@ body
         right 0
 
     &__prev
-        left 0
+        right 160px
+        width 118px
+        text-align center
+
+        &--last
+            left 0
+            right 0
+            margin 0 auto
+            bottom 40px
+            top auto
 
     &__map,
     .step-district
         display inline-block
         vertical-align top
         margin-right -.25em
+        margin-top 20px
 
 .step-form-step + .step-form-step
     display none
@@ -858,11 +865,17 @@ body
     display inline-block
     vertical-align top
     padding 10px 30px 0
-    border 1px solid #666
+    border 1px solid rgba(102,102,102,0.3)
     border-radius 20px
     height 80px
     position relative
     cursor pointer
+    transition all .4s ease 0s
+    color #013857
+
+    &:hover
+        border-color #FF0000
+        color #FF0000
 
     &__img
         width 95px
@@ -873,9 +886,28 @@ body
         text-align center
         position absolute
         bottom 5px
-        color #013857
         font-weight 100
         font-size 16px
+
+    &__success
+        position absolute
+        top -1px
+        left -1px
+        right -1px
+        bottom -1px
+        background rgba(#FFF, .5)
+        opacity 0
+        transition all .4s ease 0s
+
+    &__success-img
+        sprite($step_trash_success)
+
+    &--active:hover
+        border-color rgba(#666, .3)
+        color #999
+
+    &--active &__success
+        opacity 1
 
 .step-cont-type + .step-cont-type
     margin-left 45px
@@ -1025,14 +1057,20 @@ body
     margin 0 auto
     padding-bottom 80px
 
+    &__container
+        display inline-block
+        border-right 1px solid #EDEDED
+        border-bottom 1px solid #EDEDED
+        width 996px
+
 .client-item
-    display inline-block
-    border 1px solid #D9D9D9
+    float left
+    border-top 1px solid #EDEDED
+    border-left 1px solid #EDEDED
     padding 10px
     width 228px
     height 228px
     text-align center
-    vertical-align top
 
 .client-img
     display inline-block
