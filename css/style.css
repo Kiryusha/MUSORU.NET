@@ -1380,15 +1380,34 @@ body {
   background: #fff;
   position: relative;
 }
+.footer__gg-map {
+  width: 63%;
+  height: 100%;
+  float: left;
+}
 .footer__copyrights {
   float: left;
   width: 37%;
-  background: #f33;
+  background: rgba(255,0,0,0.8);
   color: #fff;
   height: 225px;
 }
+.footer__owner,
+.footer__adress {
+  font-size: 16px;
+  font-weight: 100;
+}
 .footer__owner {
-  padding: 30px 0 80px 50px;
+  padding: 30px 0 0 50px;
+}
+.footer__adress {
+  padding: 15px 20px 15px 50px;
+}
+.footer__link {
+  color: #fff;
+}
+.footer__link:hover {
+  text-decoration: none;
 }
 .footer__social-group {
   padding-left: 50px;

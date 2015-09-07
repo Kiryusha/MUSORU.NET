@@ -1217,15 +1217,34 @@ body
     background #FFF
     position relative
 
+    &__gg-map
+        width 63%
+        height 100%
+        float left
+
     &__copyrights
         float left
         width 37%
-        background #FF3333
+        background rgba(#FF0000, .8)
         color #FFF
         height 225px
 
+    &__owner,
+    &__adress
+        font-size 16px
+        font-weight 100
+
     &__owner
-        padding 30px 0 80px 50px
+        padding 30px 0 0 50px
+
+    &__adress
+        padding 15px 20px 15px 50px
+
+    &__link
+        color #FFF
+
+        &:hover
+            text-decoration none
 
     &__social-group
         padding-left 50px

@@ -13,8 +13,7 @@
 		<script src="js/jquery.maskedinput.min.js"></script>
 		<script src="js/jquery.hoverIntent.minified.js"></script>
 		<script src="js/jquery-ui.min.js"></script>
-		<script src="http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
-
+		<script src="https://maps.googleapis.com/maps/api/js"></script>
 	</head>
 	<body>
 		<div class="page-wrapper">
@@ -809,10 +808,10 @@
 									<a href="mailto:biz@musory-net.ru" class="fancy-form__info-mail">biz@musory-net.ru</a>
 								</div>
 							</div>
-							<div class="fancy-form__success js-form-success">
-								<div class="fancy-form__success-text fancy-form__success-text--step">
-									Благодарим Вас за оформление<br>
-									заявки в нашей компании!
+							<div class="fancy-form__success js-form-success fancy-form__success--inner">
+								<div class="fancy-form__success-text fancy-form__success-text--step fancy-form__success-text--inner">
+									Благодарим Вас за заявку.<br>
+									В самое ближайшее время мы свяжемся с Вами для уточнения деталей вашего вопроса.
 								</div>
 								<div class="fancy-form__success-img fancy-form__success-img--step">
 							</div>
@@ -821,11 +820,15 @@
 				</section>
 
 				<div class="footer clearfix">
-					<div id="ya-map"></div>
-
+					<div class="footer__gg-map" id="gg-map"></div>
 					<div class="footer__copyrights">
 						<div class="footer__owner">
 							© 2015 MUSORY-NET. 	ALL RIGHTS RESERVED
+						</div>
+						<div class="footer__adress">
+							Москва, Кетчерская улица, 13<br>
+							<a href="tel:+79859999089" class="footer__link">+7 985 9999 089</a><br>
+							<a href="mailto:biz@musory-net.ru" class="footer__link">biz@musory-net.ru</a>
 						</div>
 						<div class="footer__social-group">
 							<div class="header__social-title">
