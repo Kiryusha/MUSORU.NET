@@ -765,9 +765,9 @@ body {
 }
 .step-form-step {
   min-height: 510px;
+  border-bottom: 1px solid #ccc;
+  color: #999;
 }
-.step-form-step border-bottom 1px solid #ССС,
-.step-form-step color #999,
 .step-form-step__title {
   font-size: 24px;
   font-weight: 100;
