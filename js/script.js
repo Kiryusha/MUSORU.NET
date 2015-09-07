@@ -75,32 +75,16 @@ $(document).ready(function () {
 
 	/* Форма */
 
-	$('.js-fancy-field').click(function() {
-		$('.js-fancy-field').removeClass('is-focused');
-		$('input', $('.js-fancy-field')).each(function() {
-			if (!$(this).val()) {
-				$(this).parent().removeClass('has-label')
-			}
-		});
-		if (!$(this).hasClass('is-focused')) {
-			$(this).addClass('is-focused').addClass('has-label');
-		}
+	$('.js-fancy-field input, .js-fancy-field textarea').focus(function() {
+		$(this).parent().addClass('is-focused').addClass('has-label');
 	});
 
-	if ($('.js-fancy-field').length) {
-		$(document).click(function(event) {
-			if(!$(event.target).closest('.js-fancy-field').length) {
-				if ($('.js-fancy-field').hasClass('is-focused')) {
-					$('.js-fancy-field').removeClass('is-focused');
-				}
-				$('input', $('.js-fancy-field')).each(function() {
-					if (!$(this).val()) {
-						$(this).parent().removeClass('has-label')
-					}
-				});
-			}
-		});
-	}
+	$('.js-fancy-field input, .js-fancy-field textarea').focusout(function() {
+		$(this).parent().removeClass('is-focused');
+		if (!$(this).val()) {
+			$(this).parent().removeClass('has-label');
+		}
+	});
 
 	/* Валидация */
 
