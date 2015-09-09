@@ -191,7 +191,7 @@ $(document).ready(function () {
 		} else {
 			$('.js-next-step', parentStep).removeClass('button-disabled');
 		}
-	    console.log($(this).val().length)
+	    //console.log($(this).val().length)
 	});
 
 	$('.js-add-dist-block input').keydown(function(event){
