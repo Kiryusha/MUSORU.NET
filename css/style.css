@@ -575,7 +575,7 @@ body {
 }
 .fancy-form__field:after {
   background: #f00;
-  box-shadow: 0 -0.0625rem 0 0 #f00;
+  box-shadow: 0 -0.0025rem 0 0 #f00;
   -webkit-transform: scaleX(0);
       -ms-transform: scaleX(0);
           transform: scaleX(0);

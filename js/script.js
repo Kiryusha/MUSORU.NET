@@ -183,6 +183,17 @@ $(document).ready(function () {
 		$(this).closest('.js-single-step').prev().fadeIn();
 	});
 
+	$('.js-add-dist-block input').bind('input', function() {
+		var parentStep = $('.js-district-list').closest('.js-single-step')
+		var index = parentStep.index();
+		if ($(this).val().length < 3) {
+			$('.js-next-step', parentStep).addClass('button-disabled');
+		} else {
+			$('.js-next-step', parentStep).removeClass('button-disabled');
+		}
+	    console.log($(this).val().length)
+	});
+
 	$('.js-add-dist-block input').keydown(function(event){
 	    if(event.keyCode == 13) {
 	        event.preventDefault();

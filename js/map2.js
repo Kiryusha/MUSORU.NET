@@ -283,8 +283,6 @@ for(var regionName in regions) {
     })(regions[regionName]);
 }
 
-console.log(regions);
-
 $('.js-district-name').click(function() {
     var data = $(this).html();
     var path = $(regions[data][0]);
