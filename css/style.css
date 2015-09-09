@@ -2114,3 +2114,181 @@ video {
   font-size: 30px;
   border-color: #f00;
 }
+.step-form-step__district-names-container {
+  position: absolute;
+  width: 500px;
+  height: 440px;
+  top: 20px;
+  left: 0;
+}
+.district-name {
+  position: absolute;
+  font-weight: 100;
+  font-size: 20px;
+  z-index: 10;
+  cursor: pointer;
+}
+.district-name--zao {
+  top: 230px;
+  left: 125px;
+}
+.district-name--szao {
+  top: 150px;
+  left: 110px;
+}
+.district-name--sao {
+  top: 100px;
+  left: 160px;
+}
+.district-name--svao {
+  top: 90px;
+  left: 213px;
+}
+.district-name--vao {
+  top: 145px;
+  left: 285px;
+}
+.district-name--uvao {
+  top: 245px;
+  left: 285px;
+}
+.district-name--uao {
+  top: 320px;
+  left: 235px;
+}
+.district-name--uzao {
+  top: 302px;
+  left: 152px;
+}
+.district-name--kor {
+  font-size: 13px;
+  top: 45px;
+  left: 328px;
+}
+.district-name--sch {
+  font-size: 13px;
+  top: 40px;
+  left: 400px;
+}
+.district-name--mit {
+  font-size: 13px;
+  top: 50px;
+  left: 265px;
+}
+.district-name--reu {
+  font-size: 13px;
+  top: 185px;
+  left: 355px;
+}
+.district-name--lub {
+  font-size: 13px;
+  top: 265px;
+  left: 440px;
+}
+.district-name--lub:before {
+  top: 1px;
+  left: -18px;
+  content: '1';
+}
+.district-name--lub:after {
+  top: 5px;
+  left: -70px;
+  content: '1';
+}
+.district-name--bal {
+  font-size: 13px;
+  top: 145px;
+  left: 385px;
+}
+.district-name--kot {
+  font-size: 13px;
+  top: 285px;
+  left: 440px;
+}
+.district-name--kot:before {
+  top: 1px;
+  left: -18px;
+  content: '2';
+}
+.district-name--kot:after {
+  top: 7px;
+  left: -85px;
+  content: '2';
+}
+.district-name--dze {
+  font-size: 13px;
+  top: 305px;
+  left: 440px;
+}
+.district-name--dze:before {
+  top: 1px;
+  left: -18px;
+  content: '3';
+}
+.district-name--dze:after {
+  top: 8px;
+  left: -100px;
+  content: '3';
+}
+.district-name--dze:before,
+.district-name--kot:before,
+.district-name--lub:before,
+.district-name--dze:after,
+.district-name--kot:after,
+.district-name--lub:after {
+  position: absolute;
+  display: block;
+  font-size: 10px;
+  border-radius: 50%;
+  border: 1px solid;
+  width: 11px;
+  height: 10px;
+  padding-bottom: 1px;
+  z-index: 10;
+  text-align: center;
+}
+.district-name--lit {
+  font-size: 13px;
+  top: 352px;
+  left: 320px;
+}
+.district-name--okt {
+  font-size: 13px;
+  top: 347px;
+  left: 400px;
+}
+.district-name--him {
+  font-size: 13px;
+  top: 60px;
+  left: 120px;
+}
+.district-name--but {
+  font-size: 13px;
+  top: 410px;
+  left: 217px;
+}
+.district-name--vid {
+  font-size: 13px;
+  top: 385px;
+  left: 265px;
+}
+.district-name--dol {
+  font-size: 13px;
+  top: 40px;
+  left: 167px;
+}
+.district-name--kra {
+  font-size: 13px;
+  top: 138px;
+  left: 15px;
+}
+.district-name--jez {
+  font-size: 13px;
+  top: 210px;
+  left: 410px;
+}
+.district-name--cao {
+  font-size: 18px;
+  top: 193px;
+  left: 213px;
+}

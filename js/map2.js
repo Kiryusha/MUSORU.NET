@@ -246,21 +246,20 @@ for(var regionName in regions) {
 
         var data = region.data("name");
 
-        $('#map').append('<div style="position:absolute; top:' + coords[data].y + 'px; left:' + coords[data].x + 'px;">' + data + '</div>');
-
-        region[0].addEventListener("mouseover", function() {
+        $(region[0]).on("mouseover", function() {
             var data = region.data("name");
             region.animate(hoverStyle, animationSpeed);
-            $( '.dist-line[data-id=' + data + ']' ).stop().animate({'background-color' : '#EEE'}, 200);
-        }, true);
+            $( '.dist-line[data-id=' + data + ']' ).stop().animate({'background-color' : '#CCC'}, 200);
+        });
 
-        region[0].addEventListener("click", function() {
+        $(region[0]).on("click", function() {
             var data = region.data("name");
             if (region.attrs.fill == '#FF4D4D') {
                 region.animate({fill: '#FFF'}, animationSpeed);
                 $( '[data-id=' + data + ']' ).remove();
                 reconnect();
                 checkDistAmount();
+                $('.js-district-name[data-path="' + data + '"]').fadeIn();
             } else {
                 if (!$( '[data-id=' + data + ']' ).is(':visible')) {
                     region.animate({fill: '#FF4D4D'}, animationSpeed);
@@ -268,20 +267,41 @@ for(var regionName in regions) {
 
                     var div1 = region
                     var div2 = document.querySelector('div[data-id=' + data + ']');
-                    connect(div1, div2, "#EEE", 1);
+                    connect(div1, div2, "#CCC", 1);
                     checkDistAmount();
+                    $('.js-district-name[data-path="' + data + '"]').fadeOut();
                 }
             }
-        }, true);
+        });
 
-        region[0].addEventListener("mouseout", function() {
+        $(region[0]).on("mouseout", function() {
             var data = region.data("name");
             region.animate(hoverOrdinary, animationSpeed);
             $( '.dist-line[data-id=' + data + ']' ).stop().animate({'background-color' : 'transparent'}, 200);
-        }, true);
+        });
 
     })(regions[regionName]);
 }
+
+console.log(regions);
+
+$('.js-district-name').click(function() {
+    var data = $(this).html();
+    var path = $(regions[data][0]);
+    path.click();
+});
+
+$('.js-district-name').on('mouseover',function() {
+    var data = $(this).html();
+    var path = $(regions[data][0]);
+    path.mouseover();
+});
+
+$('.js-district-name').on('mouseout',function() {
+    var data = $(this).html();
+    var path = $(regions[data][0]);
+    path.mouseout();
+});
 
 function changeProgress(index) {
     var countAllow = $('.step-form-nav__step--active', $('.js-step-form')).length;
