@@ -2120,6 +2120,10 @@ video {
   height: 440px;
   top: 20px;
   left: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 .district-name {
   position: absolute;

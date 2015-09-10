@@ -230,6 +230,7 @@ if ($('#map').length) {
     $(document).on('click', '.js-dist-close', function(event) {
         var data = $(event.target).closest('.step-district__item').attr('data-id');
         if (data) {
+        $('.js-district-name[data-path="' + data + '"]').fadeIn();
         $( '[data-id=' + data + ']' ).remove();
             regions[data].animate({fill: '#FFF'}, 500);
             reconnect();
