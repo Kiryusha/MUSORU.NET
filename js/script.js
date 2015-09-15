@@ -127,18 +127,6 @@ $(document).ready(function () {
 
 	var trashAllow = true;
 
-	/* Клик по навигации */
-
-	$('.js-step-nav').click(function() {
-		if($(this).hasClass('step-form-nav__step--active')) {
-			var index = $(this).index();
-			if (!$('.js-single-step').eq(index).is(':visible')) {
-				$('.js-single-step').hide();
-				$('.js-single-step').eq(index).fadeIn();
-			}
-		}
-	})
-
 	/* Клик выбора типа мусора */
 
 	$('.js-trash-item').click(function() {
@@ -265,31 +253,33 @@ $(document).ready(function () {
 		ymaps.ready(init);
 	}
 
-	function ggInitialize() {
-    var mapCanvas = document.getElementById('gg-map');
-    var ggStyleArray = [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#dde6e8"},{"visibility":"on"}]}]
-    var styledMap = new google.maps.StyledMapType(ggStyleArray,
-    	{name: "Styled Map"});
-    var mapOptions = {
-				center: new google.maps.LatLng(55.76567978, 37.81655332),
-				zoom: 12,
-				mapTypeId: google.maps.MapTypeId.ROADMAP,
-				mapTypeControlOptions: {
-					mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
-				}
-    		}
-        var ggMap = new google.maps.Map(mapCanvas, mapOptions)
+	if ($('#gg-map').length) {
+		function ggInitialize() {
+	    var mapCanvas = document.getElementById('gg-map');
+	    // var ggStyleArray = [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#dde6e8"},{"visibility":"on"}]}]
+	    // var styledMap = new google.maps.StyledMapType(ggStyleArray,
+	    // 	{name: "Styled Map"});
+	    var mapOptions = {
+					center: new google.maps.LatLng(55.76567978, 37.81655332),
+					zoom: 12,
+					mapTypeId: google.maps.MapTypeId.ROADMAP,
+					mapTypeControlOptions: {
+						mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+					}
+	    		}
+	        var ggMap = new google.maps.Map(mapCanvas, mapOptions)
 
-        var ggMarker = new google.maps.Marker({
-			position: new google.maps.LatLng(55.75167978, 37.81655332),
-			map: ggMap,
-			icon: 'img/map-mark.png'
-		});
+	        var ggMarker = new google.maps.Marker({
+				position: new google.maps.LatLng(55.75167978, 37.81655332),
+				map: ggMap,
+				icon: 'img/map-mark.png'
+			});
 
-		ggMap.mapTypes.set('map_style', styledMap);
-		ggMap.setMapTypeId('map_style');
+			// ggMap.mapTypes.set('map_style', styledMap);
+			// ggMap.setMapTypeId('map_style');
+		}
+		google.maps.event.addDomListener(window, 'load', ggInitialize);
 	}
-  	google.maps.event.addDomListener(window, 'load', ggInitialize);
 
 	var toggles = document.querySelectorAll(".c-hamburger");
 

@@ -3,6 +3,7 @@
 @require 'sprites'
 @require 'common'
 @require 'fonts'
+@require 'rouble'
 
 html,
 body
@@ -411,16 +412,9 @@ body
         width 100px
         color #FFF
 
-        &:hover
-            text-decoration none
-            color #FF0000
-
     &__scroll-down-mouse
         display inline-block
         sprite($mouse_icon)
-
-    &__scroll-down:hover &__scroll-down-mouse
-        sprite($mouse_icon_hover)
 
 /* Форма в хедере */
 
@@ -649,7 +643,6 @@ body
 
     &__step--active
         color #FF0000
-        cursor pointer
 
         .step-form-nav__step-number
             border-color #FF0000
@@ -929,18 +922,18 @@ body
         width 265px
 
     &__text-block
-        width 345px
-        margin-left 70px
+        width 420px
+        margin-left 20px
 
     &__text
         text-align left
-        font-size 18px
+        font-size 15px
         font-weight 100
         color #999
 
     &__input-wrapper
         text-align left
-        margin-top 40px
+        margin-top 15px
 
     &__input-wrapper-text
         vertical-align bottom
@@ -1606,10 +1599,6 @@ video
 .tabs dd.tab-selected
     display block
 
-.rouble
-    display inline-block
-    sprite($rouble_sign)
-
 .price-table
     border-collapse collapse
     width 100%
@@ -1873,6 +1862,8 @@ video
         font-size 14px
         font-weight 300
         color #999
+        line-height 1.5
+        letter-spacing 1px
 
     &__link
         color #FF0000

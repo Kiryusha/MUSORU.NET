@@ -249,7 +249,7 @@ for(var regionName in regions) {
 
         $(region[0]).on("mouseover", function() {
             var data = region.data("name");
-            region.animate(hoverStyle, animationSpeed);
+            region.toFront().animate(hoverStyle, animationSpeed);
             $( '.dist-line[data-id=' + data + ']' ).stop().animate({'background-color' : '#CCC'}, 200);
         });
 
@@ -276,7 +276,7 @@ for(var regionName in regions) {
         });
 
         $(region[0]).on("mouseout", function() {
-            var data = region.data("name");
+            var data = region.toBack().data("name");
             region.animate(hoverOrdinary, animationSpeed);
             $( '.dist-line[data-id=' + data + ']' ).stop().animate({'background-color' : 'transparent'}, 200);
         });
