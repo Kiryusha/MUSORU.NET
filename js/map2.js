@@ -251,6 +251,8 @@ for(var regionName in regions) {
             var data = region.data("name");
             region.toFront().animate(hoverStyle, animationSpeed);
             $( '.dist-line[data-id=' + data + ']' ).stop().animate({'background-color' : '#CCC'}, 200);
+            regions['Железнодорожный'].toFront();
+            regions['ЦАО'].toFront();
         });
 
         $(region[0]).on("click", function() {
@@ -276,8 +278,8 @@ for(var regionName in regions) {
         });
 
         $(region[0]).on("mouseout", function() {
-            var data = region.toBack().data("name");
-            region.animate(hoverOrdinary, animationSpeed);
+            var data = region.data("name");
+            region.toBack().animate(hoverOrdinary, animationSpeed);
             $( '.dist-line[data-id=' + data + ']' ).stop().animate({'background-color' : 'transparent'}, 200);
         });
 
